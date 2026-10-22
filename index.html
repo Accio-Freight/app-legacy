@@ -116,7 +116,7 @@
   }
   @media (max-width:640px){
     .hero{min-height:92vh;padding:130px 20px 50px;}
-    .hero h1{font-size:clamp(24px,5.95vw,46px);letter-spacing:.5px;line-height:1.25;}
+    .hero h1{font-size:clamp(32px,5.95vw,46px);letter-spacing:.5px;line-height:1.25;}
     .hero h1 br{display:none;}
   }
 
@@ -264,7 +264,7 @@
     .form-row{grid-template-columns:1fr;}
     form{padding:22px 18px;}
     .step{padding:16px 14px;gap:12px;}
-    .step-num{font-size:21px;min-width:32px;}
+    .step-num{font-size:32px;min-width:32px;}
     .step-arrow{width:26px;height:26px;font-size:13px;}
   }
   .field label{display:block;font-size:15.6px;font-weight:600;margin-bottom:6px;color:rgba(255,255,255,.9);}
@@ -330,7 +330,26 @@
   .footer-grid ul a{font-size:17.55px;}
   .footer-grid ul a:hover{color:#fff;}
   .footer-grid ul a.disabled{opacity:.45;pointer-events:none;}
-  .footer-bottom{margin-top:44px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);font-size:15.6px;text-align:center;  }
+  .footer-bottom{
+    margin-top:44px;
+    padding-top:24px;
+    border-top:1px solid rgba(255,255,255,.08);
+    font-size:14px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:16px;
+    color:rgba(255,255,255,.65);
+  }
+  .footer-bottom a{
+    color:rgba(255,255,255,.8);
+    text-decoration:underline;
+    transition:color .2s ease;
+  }
+  .footer-bottom a:hover{
+    color:#fff;
+  }
 
 
   /* =========================================================
@@ -472,12 +491,12 @@
   .footer-grid{gap:28px;}
   .footer-grid p,.footer-grid ul a{font-size:12px;}
   .footer-grid h5{font-size:10px;margin-bottom:9px;}
-  .footer-bottom{font-size:11px;margin-top:22px;padding-top:14px;}
+  .footer-bottom{font-size:12px;margin-top:22px;padding-top:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
 
   @media (max-width:900px){
     .hero{height:auto;min-height:680px;background-position:64% center;}
     .hero-content{padding:0 28px;}
-    .hero h1{font-size:clamp(46px,9vw,70px);max-width:520px;}
+    .hero h1{font-size:clamp(46px,9vw,80px);max-width:520px;}
     .hero-content p{font-size:15px;max-width:520px;}
     .process-grid>div:first-child,.process-grid>.steps{order:initial;}
     .process-grid{grid-template-columns:1fr;gap:34px;}
@@ -529,7 +548,7 @@
   .services .eyebrow{
     font-family:'Barlow',system-ui,sans-serif !important;
     color:#1e58e8 !important;
-    font-size:21px !important;
+    font-size:32px !important;
     line-height:1 !important;
     font-weight:700 !important;
     letter-spacing:0 !important;
@@ -538,7 +557,7 @@
   .services h2{
     font-family:'29LT Bukra SemiCondensed','29LT Bukra','Arial Narrow',sans-serif !important;
     color:#000 !important;
-    font-size:68px !important;
+    font-size:80px !important;
     line-height:.94 !important;
     font-weight:400 !important;
     letter-spacing:-2.1px !important;
@@ -547,7 +566,7 @@
   .services h2 em{
     font-family:'29LT Bukra SemiCondensed','29LT Bukra','Arial Narrow',sans-serif !important;
     color:#1e58e8 !important;
-    font-size:1em !important;
+    font-size:80px !important;
     line-height:.98 !important;
     font-style:italic !important;
     font-weight:700 !important;
@@ -557,7 +576,7 @@
   .services p.lead{
     font-family:'Barlow',system-ui,sans-serif !important;
     color:#000 !important;
-    font-size:24px !important;
+    font-size:32px !important;
     line-height:1.12 !important;
     font-weight:400 !important;
     letter-spacing:0 !important;
@@ -567,7 +586,7 @@
   @media (max-width:900px){
     .services .eyebrow{font-size:18px !important;}
     .services h2{font-size:56px !important;}
-    .services p.lead{font-size:21px !important;}
+    .services p.lead{font-size:32px !important;}
   }
   @media (max-width:640px){
     .services .eyebrow{font-size:15px !important;}
@@ -668,7 +687,7 @@
     max-width:660px;
     margin-top:28px;
     font-family:'Barlow',system-ui,sans-serif;
-    font-size:21px;
+    font-size:32px;
     font-weight:500;
     line-height:1.35;
     color:#fff;
@@ -707,7 +726,7 @@
   .process .eyebrow{
     font-family:'Barlow',system-ui,sans-serif !important;
     font-style:normal !important;
-    font-size:21px !important;
+    font-size:32px !important;
     line-height:1 !important;
     font-weight:700 !important;
     letter-spacing:0 !important;
@@ -717,7 +736,7 @@
   .process h2{
     font-family:'29LT Bukra SemiCondensed','29LT Bukra','Arial Narrow',sans-serif !important;
     font-style:normal !important;
-    font-size:68px !important;
+    font-size:80px !important;
     line-height:.94 !important;
     font-weight:400 !important;
     letter-spacing:-2.1px !important;
@@ -727,7 +746,7 @@
 
   .process h2 em{
     font-family:'29LT Bukra SemiCondensed','29LT Bukra','Arial Narrow',sans-serif !important;
-    font-size:1em !important;
+    font-size:80px !important;
     line-height:.98 !important;
     font-style:italic !important;
     font-weight:700 !important;
@@ -739,7 +758,7 @@
   .process > .wrap.process-grid > div > p{
     font-family:'Barlow',system-ui,sans-serif !important;
     font-style:normal !important;
-    font-size:24px !important;
+    font-size:32px !important;
     line-height:1.12 !important;
     font-weight:400 !important;
     letter-spacing:0 !important;
@@ -750,7 +769,7 @@
   @media (max-width:900px){
     .process .eyebrow{font-size:18px !important;}
     .process h2{font-size:56px !important;}
-    .process > .wrap.process-grid > div > p{font-size:21px !important;}
+    .process > .wrap.process-grid > div > p{font-size:32px !important;}
   }
 
   @media (max-width:640px){
@@ -773,7 +792,7 @@
   .contact .eyebrow{
     font-family:'Barlow',system-ui,sans-serif !important;
     font-style:normal !important;
-    font-size:21px !important;
+    font-size:32px !important;
     line-height:1 !important;
     font-weight:700 !important;
     letter-spacing:0 !important;
@@ -783,7 +802,7 @@
   .contact h2{
     font-family:'29LT Bukra SemiCondensed','29LT Bukra','Arial Narrow',sans-serif !important;
     font-style:normal !important;
-    font-size:68px !important;
+    font-size:80px !important;
     line-height:.94 !important;
     font-weight:400 !important;
     letter-spacing:-2.1px !important;
@@ -793,7 +812,7 @@
 
   .contact h2 em{
     font-family:'29LT Bukra SemiCondensed','29LT Bukra','Arial Narrow',sans-serif !important;
-    font-size:1em !important;
+    font-size:80px !important;
     line-height:.98 !important;
     font-style:italic !important;
     font-weight:800 !important;
@@ -805,7 +824,7 @@
   .contact-text p{
     font-family:'Barlow',system-ui,sans-serif !important;
     font-style:normal !important;
-    font-size:24px !important;
+    font-size:32px !important;
     line-height:1.12 !important;
     font-weight:400 !important;
     letter-spacing:0 !important;
@@ -816,7 +835,7 @@
   @media (max-width:900px){
     .contact .eyebrow{font-size:18px !important;}
     .contact h2{font-size:56px !important;}
-    .contact-text p{font-size:21px !important;}
+    .contact-text p{font-size:32px !important;}
   }
 
   @media (max-width:640px){
@@ -839,7 +858,7 @@
   position:relative !important;
   overflow:hidden !important;
   background:var(--lavender) !important;
-  padding:58px 0 0 !important;
+  padding:58px 0 58px !important;
   min-height:670px !important;
 }
 .process .wrap.process-grid{
@@ -880,14 +899,14 @@
 .process .step-num{
   min-width:0 !important;
   font-family:'Barlow',system-ui,sans-serif !important;
-  font-size:39px !important;
+  font-size:42px !important;
   line-height:1 !important;
   font-weight:700 !important;
   color:var(--blue) !important;
 }
 .process .step-body h4{
   font-family:'Barlow',system-ui,sans-serif !important;
-  font-size:20px !important;
+  font-size:32px !important;
   line-height:1.12 !important;
   font-weight:700 !important;
   margin:0 0 9px !important;
@@ -895,7 +914,7 @@
 }
 .process .step-body p{
   font-family:'Barlow',system-ui,sans-serif !important;
-  font-size:13px !important;
+  font-size:15px !important;
   line-height:1.25 !important;
   font-weight:400 !important;
   margin:0 !important;
@@ -908,7 +927,7 @@
   border:0 !important;
   border-radius:0 !important;
   font-family:'Barlow',system-ui,sans-serif !important;
-  font-size:24px !important;
+  font-size:32px !important;
   line-height:1 !important;
   font-weight:500 !important;
   color:var(--blue) !important;
@@ -924,7 +943,7 @@
 }
 .process .process-copy .eyebrow{
   font-family:'Barlow',system-ui,sans-serif !important;
-  font-size:24px !important;
+  font-size:32px !important;
   line-height:1 !important;
   font-weight:700 !important;
   margin:0 0 5px !important;
@@ -933,7 +952,7 @@
 }
 .process .process-copy h2{
   font-family:'29LT Bukra SemiCondensed','29LT Bukra','Arial Narrow',sans-serif !important;
-  font-size:clamp(54px,4.1vw,72px) !important;
+  font-size:clamp(54px,4.1vw,80px) !important;
   line-height:.95 !important;
   font-weight:400 !important;
   letter-spacing:-2.2px !important;
@@ -943,7 +962,7 @@
 }
 .process .process-copy h2 em{
   font-family:'29LT Bukra SemiCondensed','29LT Bukra','Arial Narrow',sans-serif !important;
-  font-size:1em !important;
+  font-size:80px !important;
   line-height:.96 !important;
   font-style:italic !important;
   font-weight:700 !important;
@@ -1006,7 +1025,7 @@
     max-width:760px !important;
   }
   .process .process-copy > p{
-    font-size:21px !important;
+    font-size:32px !important;
     margin-top:22px !important;
     max-width:680px !important;
   }
@@ -1033,7 +1052,7 @@
     gap:12px !important;
     padding:16px 16px !important;
   }
-  .process .step-num{font-size:27px !important;}
+  .process .step-num{font-size:32px !important;}
   .process .step-body h4{font-size:17px !important;margin-bottom:5px !important;}
   .process .step-body p{font-size:12px !important;}
   .process .step-arrow{font-size:19px !important;}
@@ -1114,7 +1133,7 @@
 .about .feature-grid{
   display:grid !important;
   grid-template-columns:repeat(3,minmax(0,1fr)) !important;
-  column-gap:70px !important;
+  column-gap:72px !important;
   row-gap:66px !important;
   align-items:start !important;
   justify-items:center !important;
@@ -1151,7 +1170,7 @@
 .about .feature span{
   display:block !important;
   font-family:'Barlow',system-ui,sans-serif !important;
-  font-size:clamp(27px,1.7vw,35px) !important;
+  font-size:clamp(32px,1.7vw,35px) !important;
   line-height:.98 !important;
   font-weight:400 !important;
   letter-spacing:-.4px !important;
@@ -1187,13 +1206,13 @@
     grid-template-columns:1fr !important;
     gap:54px !important;
   }
-  .about .eyebrow{font-size:21px !important;}
+  .about .eyebrow{font-size:32px !important;}
   .about h2{
     font-size:64px !important;
     max-width:620px !important;
   }
   .about p{
-    font-size:24px !important;
+    font-size:32px !important;
     max-width:700px !important;
   }
   .about .feature-grid{
@@ -1392,7 +1411,7 @@
     max-width:710px !important;
     margin:38px 0 0 !important;
     font-family:'Barlow',system-ui,sans-serif !important;
-    font-size:27px !important;
+    font-size:32px !important;
     line-height:1.45 !important;
     font-weight:400 !important;
     letter-spacing:0 !important;
@@ -2409,7 +2428,10 @@ html {
       </ul>
     </div>
   </div>
-  <div class="footer-bottom wrap">© 2026 Accio Freight. Todos los derechos reservados.</div>
+  <div class="footer-bottom wrap">
+    <span>© 2026 ACCIO FREIGHT SAC. Todos los derechos reservados.</span>
+    <a href="legal.html">Política de privacidad</a>
+  </div>
 </footer>
 
 <script>
