@@ -434,8 +434,8 @@
   /* Proceso: pasos a la izquierda, texto a la derecha como PDF */
   .process{padding:48px 0 44px;background:var(--lavender);position:relative;overflow:hidden;}
   .process-grid{grid-template-columns:1.05fr .95fr;gap:72px;align-items:center;}
-  .process-grid>div:first-child{order:2;}
   .process-grid>.steps{order:1;}
+  .process-grid>.process-copy{order:2;}
   .process .eyebrow{font-size:13px;margin-bottom:3px;}
   .process h2{font-family:var(--font-bukra);font-size:clamp(39px,4.25vw,55px);font-weight:400;line-height:.94;max-width:510px;letter-spacing:-.8px;}
   .process h2 em{font-family:var(--font-bukra);font-style:italic;font-weight:400;color:#245fe5;}
@@ -848,13 +848,14 @@
   padding:0 18px !important;
   margin:0 auto !important;
   display:grid !important;
-  grid-template-columns:minmax(0,43%) minmax(0,57%) !important;
-  gap:82px !important;
+  grid-template-columns:minmax(0,44%) minmax(0,56%) !important;
+  gap:72px !important;
   align-items:start !important;
 }
 
 /* columna izquierda */
 .process .steps{
+  order:1 !important;
   display:flex !important;
   flex-direction:column !important;
   gap:14px !important;
@@ -915,9 +916,10 @@
 
 /* columna derecha */
 .process .process-copy{
+  order:2 !important;
   position:relative !important;
   min-height:605px !important;
-  padding:74px 0 270px 0 !important;
+  padding:20px 0 240px 0 !important;
   z-index:1 !important;
 }
 .process .process-copy .eyebrow{
@@ -931,10 +933,10 @@
 }
 .process .process-copy h2{
   font-family:'29LT Bukra SemiCondensed','29LT Bukra','Arial Narrow',sans-serif !important;
-  font-size:clamp(58px,4.4vw,78px) !important;
-  line-height:.93 !important;
+  font-size:clamp(54px,4.1vw,72px) !important;
+  line-height:.95 !important;
   font-weight:400 !important;
-  letter-spacing:-2.6px !important;
+  letter-spacing:-2.2px !important;
   margin:0 !important;
   max-width:850px !important;
   color:var(--ink) !important;
@@ -945,30 +947,71 @@
   line-height:.96 !important;
   font-style:italic !important;
   font-weight:700 !important;
-  letter-spacing:-2.1px !important;
+  letter-spacing:-1.8px !important;
   display:block !important;
   margin-top:8px !important;
   color:var(--blue) !important;
 }
 .process .process-copy > p{
   font-family:'Barlow',system-ui,sans-serif !important;
-  font-size:29px !important;
-  line-height:1.16 !important;
+  font-size:22px !important;
+  line-height:1.25 !important;
   font-weight:400 !important;
   letter-spacing:0 !important;
-  margin:52px 0 0 !important;
-  max-width:760px !important;
+  margin:28px 0 0 !important;
+  max-width:460px !important;
   color:var(--ink) !important;
 }
 .process .process-art{
   position:absolute !important;
-  left:-36px !important;
-  right:-18px !important;
+  left:0 !important;
+  right:0 !important;
   bottom:-2px !important;
-  width:calc(100% + 54px) !important;
+  width:100% !important;
   height:auto !important;
-  z-index:-1 !important;
+  z-index:0 !important;
   pointer-events:none !important;
+  overflow:visible !important;
+}
+
+.process-art .route-line{
+  stroke:#f2b321 !important;
+  stroke-width:3.5 !important;
+  stroke-linecap:round !important;
+  stroke-linejoin:round !important;
+  stroke-dasharray:7 11 !important;
+  animation:route-flow 3.2s linear infinite !important;
+}
+
+@keyframes route-flow{
+  to{
+    stroke-dashoffset:-180;
+  }
+}
+
+.process-art .route-dot{
+  fill:#f2b321 !important;
+  transform-origin:center !important;
+  transform-box:fill-box !important;
+  animation:dot-pulse 2.2s ease-in-out infinite alternate !important;
+}
+
+@keyframes dot-pulse{
+  0%{
+    transform:scale(1);
+    opacity:0.85;
+  }
+  100%{
+    transform:scale(1.35);
+    opacity:1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .process-art .route-line,
+  .process-art .route-dot{
+    animation:none !important;
+  }
 }
 
 @media (max-width:1100px){
@@ -1124,13 +1167,25 @@
   color:inherit !important;
 }
 
-.about .feature svg{
+.about .feature svg,
+.about .feature .feature-icon,
+.about .feature img{
   width:92px !important;
   height:92px !important;
+  max-width:92px !important;
+  max-height:92px !important;
+  object-fit:contain !important;
   display:block !important;
   margin:0 auto 14px !important;
   stroke:currentColor !important;
   stroke-width:1.25 !important;
+  filter:brightness(0) invert(1) !important;
+  transition:transform .2s ease !important;
+}
+
+.about .feature:hover .feature-icon,
+.about .feature:hover img{
+  transform:scale(1.06) !important;
 }
 
 .about .feature span{
@@ -1154,7 +1209,9 @@
   .about h2{font-size:clamp(62px,5.4vw,82px) !important;}
   .about p{font-size:clamp(23px,2vw,30px) !important;max-width:650px !important;}
   .about .feature-grid{column-gap:42px !important;row-gap:48px !important;}
-  .about .feature svg{width:72px !important;height:72px !important;}
+  .about .feature svg,
+  .about .feature .feature-icon,
+  .about .feature img{width:72px !important;height:72px !important;max-width:72px !important;max-height:72px !important;}
   .about .feature span{font-size:clamp(22px,1.7vw,28px) !important;}
 }
 
@@ -1205,9 +1262,13 @@
     column-gap:18px !important;
     row-gap:34px !important;
   }
-  .about .feature svg{
+  .about .feature svg,
+  .about .feature .feature-icon,
+  .about .feature img{
     width:58px !important;
     height:58px !important;
+    max-width:58px !important;
+    max-height:58px !important;
     margin-bottom:10px !important;
   }
   .about .feature span{
@@ -1671,29 +1732,358 @@
 }
 </style>
 
+<style id="floating-navbar-styles">
+/* =========================================================
+   NAVBAR FLOTANTE TIPO PÍLDORA (Floating Capsule Navbar)
+   Inspirado en diseño Canva / Figma con ScrollSpy y glassmorphism
+   ========================================================= */
+
+header {
+  position: fixed !important;
+  top: 18px !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 9999 !important;
+  display: flex !important;
+  justify-content: center !important;
+  pointer-events: none !important;
+  padding: 0 !important;
+  background: transparent !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), top 0.3s ease !important;
+}
+
+header .wrap,
+header .header-pill {
+  pointer-events: auto !important;
+  width: min(94vw, 1260px) !important;
+  max-width: 1260px !important;
+  margin: 0 auto !important;
+  padding: 8px 16px 8px 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 20px !important;
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.94) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(220, 226, 238, 0.85) !important;
+  box-shadow: 0 12px 32px -4px rgba(15, 23, 42, 0.12), 0 2px 6px rgba(15, 23, 42, 0.04) !important;
+}
+
+.logo {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  text-decoration: none !important;
+  line-height: 1 !important;
+  flex-shrink: 0 !important;
+}
+
+.logo-mark {
+  height: 32px !important;
+  width: auto !important;
+  flex-shrink: 0 !important;
+  display: block !important;
+  filter: invert(27%) sepia(93%) saturate(2250%) hue-rotate(217deg) brightness(94%) contrast(93%) !important;
+  transition: transform 0.2s ease !important;
+}
+
+.logo:hover .logo-mark {
+  transform: scale(1.05) !important;
+}
+
+.logo-text {
+  font-family: 'Barlow', system-ui, sans-serif !important;
+  font-size: 21px !important;
+  font-weight: 700 !important;
+  color: #0b1329 !important;
+  letter-spacing: -0.3px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  text-transform: none !important;
+}
+
+.logo-text strong {
+  font-weight: 700 !important;
+  color: #0b1329 !important;
+  font-size: 21px !important;
+  letter-spacing: -0.3px !important;
+}
+
+.logo-text span {
+  font-weight: 700 !important;
+  color: #245fe5 !important;
+  font-size: 21px !important;
+  letter-spacing: -0.3px !important;
+}
+
+.nav-menu {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 1 !important;
+}
+
+.nav-links {
+  display: flex !important;
+  align-items: center !important;
+  gap: 32px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.nav-links a,
+.nav-links .nav-link {
+  position: relative !important;
+  font-family: 'Barlow', system-ui, sans-serif !important;
+  font-size: 16.5px !important;
+  line-height: 1 !important;
+  font-weight: 500 !important;
+  color: #475569 !important;
+  text-decoration: none !important;
+  padding: 8px 0 !important;
+  letter-spacing: 0.1px !important;
+  transition: color 0.2s ease !important;
+  opacity: 1 !important;
+}
+
+.nav-links a:hover,
+.nav-links .nav-link:hover {
+  color: #0f172a !important;
+}
+
+.nav-links a.active,
+.nav-links .nav-link.active {
+  color: #245fe5 !important;
+  font-weight: 700 !important;
+}
+
+.nav-links a.active::after,
+.nav-links .nav-link.active::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -4px !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 2.5px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(90deg, #245fe5, #8b5cf6) !important;
+}
+
+.header-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 18px !important;
+}
+
+.lang-switch {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  font-family: 'Barlow', system-ui, sans-serif !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  color: #94a3b8 !important;
+  cursor: pointer !important;
+  user-select: none !important;
+  padding: 4px 8px !important;
+  border-radius: 8px !important;
+  transition: background 0.2s ease !important;
+}
+
+.lang-switch:hover {
+  background: rgba(0, 0, 0, 0.04) !important;
+}
+
+.lang-switch .lang-opt.active {
+  color: #245fe5 !important;
+  font-weight: 700 !important;
+}
+
+.lang-switch .lang-sep {
+  color: #cbd5e1 !important;
+  font-weight: 400 !important;
+}
+
+.btn-cta {
+  min-width: 0 !important;
+  min-height: 0 !important;
+  padding: 11px 26px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(135deg, #4f1fe6 0%, #7928ca 100%) !important;
+  color: #ffffff !important;
+  font-family: 'Barlow', system-ui, sans-serif !important;
+  font-size: 14.5px !important;
+  line-height: 1 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+  box-shadow: 0 4px 14px rgba(79, 31, 230, 0.35) !important;
+  border: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease !important;
+}
+
+.btn-cta:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 20px rgba(79, 31, 230, 0.45) !important;
+  filter: brightness(1.06) !important;
+}
+
+.btn-cta:active {
+  transform: translateY(0) !important;
+}
+
+/* Offset para el scroll suave para que el navbar flotante no tape los títulos */
+html {
+  scroll-behavior: smooth !important;
+}
+
+#inicio, #servicios, #nosotros, .process, #contacto {
+  scroll-margin-top: 100px !important;
+}
+
+@media (max-width: 900px) {
+  header {
+    top: 10px !important;
+  }
+  header .wrap,
+  header .header-pill {
+    width: calc(100% - 20px) !important;
+    padding: 6px 10px 6px 14px !important;
+    gap: 8px !important;
+  }
+  .logo-mark {
+    height: 26px !important;
+  }
+  .logo-text,
+  .logo-text strong,
+  .logo-text span {
+    font-size: 17px !important;
+  }
+  .header-actions {
+    gap: 8px !important;
+  }
+  .lang-switch {
+    display: none !important;
+  }
+  .btn-cta {
+    min-width: 0 !important;
+    min-height: 0 !important;
+    width: auto !important;
+    padding: 7px 12px !important;
+    font-size: 11px !important;
+    white-space: nowrap !important;
+    letter-spacing: 0.3px !important;
+  }
+  .nav-menu {
+    display: contents !important;
+  }
+  .menu-toggle {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    gap: 4px !important;
+    width: 34px !important;
+    height: 34px !important;
+    padding: 6px !important;
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer !important;
+    flex-shrink: 0 !important;
+  }
+  .menu-toggle span {
+    display: block !important;
+    width: 20px !important;
+    height: 2.5px !important;
+    flex-shrink: 0 !important;
+    background: #0f172a !important;
+    border-radius: 2px !important;
+    transition: transform 0.25s ease, opacity 0.2s ease !important;
+  }
+  .menu-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg) !important;
+  }
+  .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0 !important;
+  }
+  .menu-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg) !important;
+  }
+  .nav-menu {
+    position: static !important;
+    flex: initial !important;
+  }
+  .nav-links {
+    position: absolute !important;
+    top: calc(100% + 10px) !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    background: rgba(255, 255, 255, 0.98) !important;
+    border: 1px solid rgba(220, 226, 238, 0.9) !important;
+    border-radius: 22px !important;
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.16) !important;
+    padding: 16px 22px !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 8px !important;
+    display: none !important;
+  }
+  .nav-links.open {
+    display: flex !important;
+  }
+  .nav-links a,
+  .nav-links .nav-link {
+    font-size: 17px !important;
+    padding: 10px 0 !important;
+    border-bottom: 1px solid rgba(220, 226, 238, 0.45) !important;
+  }
+  .nav-links a:last-child,
+  .nav-links .nav-link:last-child {
+    border-bottom: none !important;
+  }
+  .nav-links a.active::after,
+  .nav-links .nav-link.active::after {
+    bottom: 2px !important;
+    height: 2px !important;
+  }
+}
+</style>
+
 </head>
 <body>
 <a href="#main-content" class="sr-only focusable" tabindex="0">Saltar al contenido</a>
 
-<header>
-  <div class="wrap">
-    <a class="logo" href="#inicio">
+<header id="siteHeader">
+  <div class="wrap header-pill">
+    <a class="logo" href="#inicio" aria-label="Accio Freight — Inicio">
       <img src="logo.png" alt="Accio Freight" class="logo-mark" width="301" height="235">
-      <span class="logo-text"><strong>ACCIO</strong><small>FREIGHT</small></span>
+      <span class="logo-text"><strong>Accio</strong> <span>Freight</span></span>
     </a>
-    <nav>
+    <nav class="nav-menu">
       <div class="nav-links" id="navLinks">
-        <a href="#inicio">Inicio</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#" aria-label="Blog (próximamente)">Blog</a>
-        <a href="#contacto">Contáctanos</a>
+        <a href="#inicio" class="nav-link active">Inicio</a>
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#nosotros" class="nav-link">Nosotros</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
       </div>
+    </nav>
+    <div class="header-actions">
+      
       <a class="btn btn-cta" href="#contacto">COTIZA AHORA</a>
       <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
-    </nav>
+    </div>
   </div>
 </header>
 
@@ -1753,27 +2143,27 @@
     </div>
     <div class="feature-grid">
       <div class="feature">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18 14 14 0 010-18z"/></svg>
+        <img src="icons/global_network.png" alt="Global Network" class="feature-icon" width="92" height="92" loading="lazy">
         <span>Global<br>Network</span>
       </div>
       <div class="feature">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4"><circle cx="12" cy="13" r="6"/><path d="M12 9v4l2.5 1.5M10 2h4M4 6l1.5 1.5M20 6l-1.5 1.5"/></svg>
+        <img src="icons/cost_efficent.png" alt="Cost Efficient" class="feature-icon" width="92" height="92" loading="lazy">
         <span>Cost<br>Efficient</span>
       </div>
       <div class="feature">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4"><rect x="4" y="7" width="16" height="13" rx="1.5"/><path d="M8 7V4h8v3M17 13a3.5 3.5 0 11-7 0 3.5 3.5 0 017 0z"/><path d="M17 13v-1.5M17 13h1.3"/></svg>
+        <img src="icons/on_time_delivery.png" alt="On-Time Delivery" class="feature-icon" width="92" height="92" loading="lazy">
         <span>On-Time<br>Delivery</span>
       </div>
       <div class="feature">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4"><path d="M4 8h11l-3-3M20 16H9l3 3"/><circle cx="19" cy="8" r="1.6"/><circle cx="5" cy="16" r="1.6"/></svg>
+        <img src="icons/end_to_end_handling.png" alt="End-to-End Handling" class="feature-icon" width="92" height="92" loading="lazy">
         <span>End-to-End<br>Handling</span>
       </div>
       <div class="feature">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4"><circle cx="12" cy="8" r="3"/><path d="M6 21c0-3.5 2.7-6 6-6s6 2.5 6 6"/><path d="M9 8l2 1.5L15 6"/></svg>
+        <img src="icons/custom_expertise.png" alt="Customs Expertise" class="feature-icon" width="92" height="92" loading="lazy">
         <span>Customs<br>Expertise</span>
       </div>
       <div class="feature">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4"><path d="M4 15l3-6h10l3 6M4 15h16M4 15v3h16v-3"/><path d="M8 9V5h8v4"/></svg>
+        <img src="icons/live_tracking.png" alt="Live Tracking" class="feature-icon" width="92" height="92" loading="lazy">
         <span>Live<br>Tracking</span>
       </div>
     </div>
@@ -1816,30 +2206,102 @@
       <h2>Una operación simple,<em>de principio a fin.</em></h2>
       <p>Cada envío tiene un responsable, una ruta y un siguiente paso claro. Diseñamos la operación contigo y la seguimos hasta el cierre.</p>
 
-      <svg class="process-art" viewBox="0 0 900 260" aria-hidden="true" focusable="false">
-        <g fill="none" stroke="#526784" stroke-width="3">
-          <path d="M0 237 C130 245, 250 255, 380 246 S650 250, 900 242"/>
-          <path d="M42 226V104M15 104h116M25 96h96M56 104v24M98 104v24M72 128v35M60 163h25v26H60z"/>
-          <path d="M248 228V86M220 86h128M229 78h110M271 86v24M319 86v24M294 110v35"/>
-          <path d="M555 237V132M535 132h42"/>
-          <path d="M682 231V82M645 82h154M654 73h137M698 82v23M756 82v23M727 105v36M712 141h29v27h-29z"/>
+      <svg class="process-art" viewBox="0 0 1280 230" preserveAspectRatio="xMidYMax slice" fill="none" aria-hidden="true" focusable="false">
+        <!-- Agua / reflejo y línea base de muelle -->
+        <path d="M0 195 Q 120 185 240 195 T 480 195 T 720 193 T 960 195 T 1200 193 T 1280 195 V230 H0 Z"
+              fill="#B5D4F4" opacity="0.28" />
+        <path d="M0 202 Q 120 194 240 202 T 480 202 T 720 200 T 960 202 T 1200 200 T 1280 202 V230 H0 Z"
+              fill="#526784" opacity="0.18" />
+        <line x1="0" y1="195" x2="1280" y2="195" stroke="#526784" stroke-width="1.8" opacity="0.7" />
+
+        <!-- Grúa pórtico 1 (izquierda) -->
+        <g stroke="#526784" stroke-width="2.2" opacity="0.78" stroke-linecap="round">
+          <line x1="80" y1="55" x2="80" y2="195" />
+          <line x1="160" y1="55" x2="160" y2="195" />
+          <line x1="60" y1="55" x2="180" y2="55" />
+          <line x1="60" y1="62" x2="180" y2="62" />
+          <line x1="110" y1="62" x2="110" y2="110" />
+          <rect x="95" y="62" width="30" height="14" fill="#d8dde8" stroke="#526784" stroke-width="1" />
+        </g>
+        <g opacity="0.82">
+          <rect x="98" y="110" width="24" height="14" fill="#2250A6" stroke="#526784" stroke-width="1" />
         </g>
 
-        <g fill="#d8dde8" stroke="#526784" stroke-width="1.4">
-          <rect x="344" y="191" width="34" height="38"/><rect x="380" y="202" width="35" height="27"/><rect x="417" y="212" width="38" height="17"/>
-          <rect x="803" y="204" width="39" height="25"/><rect x="846" y="198" width="41" height="31"/>
+        <!-- Grúa pórtico 2 (centro-izquierda) -->
+        <g stroke="#526784" stroke-width="2.2" opacity="0.85" stroke-linecap="round">
+          <line x1="300" y1="40" x2="300" y2="195" />
+          <line x1="410" y1="40" x2="410" y2="195" />
+          <line x1="280" y1="40" x2="430" y2="40" />
+          <line x1="280" y1="48" x2="430" y2="48" />
+          <line x1="360" y1="48" x2="360" y2="100" />
+          <rect x="340" y="48" width="40" height="18" fill="#d8dde8" stroke="#526784" stroke-width="1" />
         </g>
-        <g stroke="#526784" stroke-width="1">
-          <path d="M351 191v38M359 191v38M367 191v38M387 202v27M395 202v27M403 202v27M424 212v17M433 212v17M442 212v17"/>
-          <path d="M812 204v25M821 204v25M830 204v25M855 198v31M865 198v31M876 198v31"/>
+        <!-- Stacks de contenedores (centro) -->
+        <g opacity="0.9" stroke="#526784" stroke-width="1">
+          <rect x="420" y="165" width="34" height="22" fill="#2250A6" />
+          <rect x="454" y="165" width="34" height="22" fill="#ffffff" />
+          <rect x="488" y="165" width="34" height="22" fill="#B5D4F4" />
+          <rect x="420" y="143" width="34" height="22" fill="#B5D4F4" />
+          <rect x="454" y="143" width="34" height="22" fill="#2250A6" />
+          <rect x="488" y="143" width="34" height="22" fill="#ffffff" />
+          <rect x="420" y="121" width="34" height="22" fill="#ffffff" />
+          <rect x="454" y="121" width="34" height="22" fill="#B5D4F4" />
         </g>
 
-        <path d="M54 202 C150 203, 185 224, 251 211 S378 169, 456 166 S575 180, 645 159 S753 91, 810 35"
-              fill="none" stroke="#f2b321" stroke-width="4" stroke-linecap="round"
-              stroke-dasharray="2 12"/>
-        <g fill="#f2b321">
-          <circle cx="251" cy="211" r="7"/>
-          <circle cx="755" cy="116" r="7"/>
+        <!-- Mástil / antena -->
+        <g stroke="#526784" stroke-width="1.6" opacity="0.65">
+          <line x1="610" y1="60" x2="610" y2="195" />
+          <line x1="595" y1="80" x2="625" y2="80" />
+          <line x1="600" y1="70" x2="620" y2="70" />
+        </g>
+
+        <!-- Grúa pórtico 3 (derecha, gran formato) -->
+        <g stroke="#526784" stroke-width="2.4" opacity="0.9" stroke-linecap="round">
+          <line x1="740" y1="35" x2="740" y2="195" />
+          <line x1="880" y1="35" x2="880" y2="195" />
+          <line x1="720" y1="35" x2="900" y2="35" />
+          <line x1="720" y1="44" x2="900" y2="44" />
+          <line x1="800" y1="44" x2="800" y2="95" />
+          <rect x="775" y="44" width="50" height="22" fill="#d8dde8" stroke="#526784" stroke-width="1.2" />
+          <!-- Refuerzos diagonales -->
+          <line x1="740" y1="80" x2="800" y2="44" stroke-width="1.6" />
+          <line x1="880" y1="80" x2="800" y2="44" stroke-width="1.6" />
+        </g>
+        <!-- Contenedor suspendido por grúa 3 -->
+        <g opacity="0.9">
+          <rect x="784" y="95" width="32" height="18" fill="#2250A6" stroke="#526784" stroke-width="1.2" />
+          <rect x="784" y="113" width="32" height="3" fill="#526784" />
+        </g>
+
+        <!-- Stacks de contenedores (derecha) -->
+        <g opacity="0.85" stroke="#526784" stroke-width="1">
+          <rect x="910" y="165" width="34" height="22" fill="#ffffff" />
+          <rect x="944" y="165" width="34" height="22" fill="#2250A6" />
+          <rect x="978" y="165" width="34" height="22" fill="#B5D4F4" />
+          <rect x="1012" y="165" width="34" height="22" fill="#ffffff" />
+          <rect x="910" y="143" width="34" height="22" fill="#B5D4F4" />
+          <rect x="944" y="143" width="34" height="22" fill="#ffffff" />
+          <rect x="978" y="143" width="34" height="22" fill="#2250A6" />
+        </g>
+
+        <!-- Silueta buque portacontenedores (derecha) -->
+        <g opacity="0.75" stroke="#526784" stroke-linecap="round">
+          <path d="M1060 170 L1100 160 L1240 160 L1260 170 L1260 190 L1060 190 Z" fill="#d8dde8" stroke-width="1.2" />
+          <rect x="1105" y="140" width="20" height="20" fill="#B5D4F4" stroke-width="1" />
+          <rect x="1128" y="135" width="20" height="25" fill="#2250A6" stroke-width="1" />
+          <rect x="1151" y="140" width="20" height="20" fill="#ffffff" stroke-width="1" />
+          <rect x="1174" y="133" width="20" height="27" fill="#B5D4F4" stroke-width="1" />
+          <rect x="1197" y="138" width="20" height="22" fill="#2250A6" stroke-width="1" />
+        </g>
+
+        <!-- Línea de ruta animada y puntos -->
+        <g class="process-route">
+          <path class="route-line"
+                d="M 10 185 C 160 189, 290 204, 440 200 C 590 196, 680 162, 800 105 C 890 65, 990 25, 1150 10"
+                fill="none" stroke="#f2b321" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"
+                stroke-dasharray="7 11" />
+          <circle class="route-dot" cx="440" cy="200" r="6" fill="#f2b321" />
+          <circle class="route-dot" cx="800" cy="105" r="6" fill="#f2b321" />
         </g>
       </svg>
     </div>
@@ -1986,6 +2448,90 @@
       }
     });
   }
+
+  /* ScrollSpy y navegación activa para el navbar flotante */
+  const navAnchorLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+  const sections = [
+    { id: 'inicio', el: document.getElementById('inicio') },
+    { id: 'servicios', el: document.getElementById('servicios') },
+    { id: 'nosotros', el: document.getElementById('nosotros') },
+    { id: 'contacto', el: document.getElementById('contacto') }
+  ].filter(s => s.el !== null);
+
+  function setActiveNavLink(id) {
+    navAnchorLinks.forEach(link => {
+      if (link.getAttribute('href') === '#' + id) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  }
+
+  // Clic en enlace: scroll suave y activar inmediatamente
+  navAnchorLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const targetId = link.getAttribute('href').slice(1);
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        targetEl.scrollIntoView({ behavior: 'smooth' });
+        setActiveNavLink(targetId);
+        if (typeof closeMenu === 'function') closeMenu();
+      }
+    });
+  });
+
+  // Botón CTA "COTIZA AHORA" hacia contacto
+  const ctaBtn = document.querySelector('.header-actions .btn-cta');
+  if (ctaBtn) {
+    ctaBtn.addEventListener('click', (e) => {
+      const targetEl = document.getElementById('contacto');
+      if (targetEl) {
+        e.preventDefault();
+        targetEl.scrollIntoView({ behavior: 'smooth' });
+        setActiveNavLink('contacto');
+        if (typeof closeMenu === 'function') closeMenu();
+      }
+    });
+  }
+
+  // Selector de idioma (ES / EN)
+  const langOpts = document.querySelectorAll('.lang-switch .lang-opt');
+  langOpts.forEach(opt => {
+    opt.addEventListener('click', () => {
+      langOpts.forEach(o => o.classList.remove('active'));
+      opt.classList.add('active');
+    });
+  });
+
+  // Detección automática al hacer scroll (ScrollSpy)
+  let scrollTimer = null;
+  function handleScrollSpy() {
+    if ((window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 100)) {
+      setActiveNavLink('contacto');
+      return;
+    }
+    const scrollPos = window.scrollY + 160;
+    for (let i = sections.length - 1; i >= 0; i--) {
+      const sec = sections[i];
+      if (sec.el.offsetTop <= scrollPos) {
+        setActiveNavLink(sec.id);
+        break;
+      }
+    }
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!scrollTimer) {
+      scrollTimer = setTimeout(() => {
+        scrollTimer = null;
+        handleScrollSpy();
+      }, 40);
+    }
+  }, { passive: true });
+
+  handleScrollSpy();
 
   /* Formulario de contacto — misma lógica que guia.html (sin i18n) */
   const form = document.getElementById('contactForm');
