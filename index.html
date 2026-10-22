@@ -331,13 +331,15 @@
   .footer-grid ul a:hover{color:#fff;}
   .footer-grid ul a.disabled{opacity:.45;pointer-events:none;}
   .footer-bottom{
-    margin-top:44px;
-    padding-top:24px;
+    width:min(92vw, 960px) !important;
+    max-width:960px !important;
+    margin:36px auto 0 !important;
+    padding:20px 14px 0 !important;
     border-top:1px solid rgba(255,255,255,.08);
-    font-size:14px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    font-size:13px;
+    display:flex !important;
+    justify-content:space-between !important;
+    align-items:center !important;
     flex-wrap:wrap;
     gap:16px;
     color:rgba(255,255,255,.65);
@@ -491,7 +493,7 @@
   .footer-grid{gap:28px;}
   .footer-grid p,.footer-grid ul a{font-size:12px;}
   .footer-grid h5{font-size:10px;margin-bottom:9px;}
-  .footer-bottom{font-size:12px;margin-top:22px;padding-top:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+  .footer-bottom{font-size:12px;margin:22px auto 0 !important;padding-top:14px;}
 
   @media (max-width:900px){
     .hero{height:auto;min-height:680px;background-position:64% center;}
@@ -2428,7 +2430,7 @@ html {
       </ul>
     </div>
   </div>
-  <div class="footer-bottom wrap">
+  <div class="footer-bottom">
     <span>© 2026 ACCIO FREIGHT SAC. Todos los derechos reservados.</span>
     <a href="legal.html">Política de privacidad</a>
   </div>
