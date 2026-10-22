@@ -974,46 +974,6 @@
   overflow:visible !important;
 }
 
-.process-art .route-line{
-  stroke:#f2b321 !important;
-  stroke-width:3.5 !important;
-  stroke-linecap:round !important;
-  stroke-linejoin:round !important;
-  stroke-dasharray:7 11 !important;
-  animation:route-flow 3.2s linear infinite !important;
-}
-
-@keyframes route-flow{
-  to{
-    stroke-dashoffset:-180;
-  }
-}
-
-.process-art .route-dot{
-  fill:#f2b321 !important;
-  transform-origin:center !important;
-  transform-box:fill-box !important;
-  animation:dot-pulse 2.2s ease-in-out infinite alternate !important;
-}
-
-@keyframes dot-pulse{
-  0%{
-    transform:scale(1);
-    opacity:0.85;
-  }
-  100%{
-    transform:scale(1.35);
-    opacity:1;
-  }
-}
-
-@media (prefers-reduced-motion: reduce){
-  .process-art .route-line,
-  .process-art .route-dot{
-    animation:none !important;
-  }
-}
-
 @media (max-width:1100px){
   .process .wrap.process-grid{
     grid-template-columns:46% 54% !important;
@@ -2329,16 +2289,6 @@ html {
           <rect x="1151" y="140" width="20" height="20" fill="#ffffff" stroke-width="1" />
           <rect x="1174" y="133" width="20" height="27" fill="#B5D4F4" stroke-width="1" />
           <rect x="1197" y="138" width="20" height="22" fill="#2250A6" stroke-width="1" />
-        </g>
-
-        <!-- Línea de ruta animada y puntos -->
-        <g class="process-route">
-          <path class="route-line"
-                d="M 10 185 C 160 189, 290 204, 440 200 C 590 196, 680 162, 800 105 C 890 65, 990 25, 1150 10"
-                fill="none" stroke="#f2b321" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"
-                stroke-dasharray="7 11" />
-          <circle class="route-dot" cx="440" cy="200" r="6" fill="#f2b321" />
-          <circle class="route-dot" cx="800" cy="105" r="6" fill="#f2b321" />
         </g>
       </svg>
     </div>
