@@ -321,20 +321,26 @@
 
   /* Footer */
   footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 32px;}
-  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;}
-  @media (max-width:640px){.footer-grid{grid-template-columns:1fr;}}
+  footer .wrap.footer-grid,
+  footer .footer-bottom{
+    width:min(92vw, 1200px) !important;
+    max-width:1200px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    padding-left:20px !important;
+    padding-right:20px !important;
+  }
+  .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;}
   .footer-grid .logo{color:#fff;margin-bottom:14px;}
-  .footer-grid p{font-size:16.9px;max-width:280px;line-height:1.6;font-family:'Barlow',sans-serif;}
+  .footer-grid p{font-size:16.9px;max-width:320px;line-height:1.6;font-family:'Barlow',sans-serif;}
   .footer-grid h5{color:rgba(255,255,255,.85);font-size:14.95px;letter-spacing:.6px;margin-bottom:16px;font-family:'Barlow',sans-serif;text-transform:uppercase;}
   .footer-grid ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
   .footer-grid ul a{font-size:17.55px;}
   .footer-grid ul a:hover{color:#fff;}
   .footer-grid ul a.disabled{opacity:.45;pointer-events:none;}
   .footer-bottom{
-    width:min(92vw, 960px) !important;
-    max-width:960px !important;
-    margin:36px auto 0 !important;
-    padding:20px 14px 0 !important;
+    margin-top:36px !important;
+    padding-top:22px !important;
     border-top:1px solid rgba(255,255,255,.08);
     font-size:13px;
     display:flex !important;
@@ -351,6 +357,11 @@
   }
   .footer-bottom a:hover{
     color:#fff;
+  }
+
+  @media (max-width:768px){
+    .footer-grid{grid-template-columns:1fr !important;gap:28px !important;}
+    .footer-bottom{flex-direction:column !important;text-align:center !important;gap:10px !important;}
   }
 
 
@@ -1513,8 +1524,7 @@
   .services > .wrap,
   .about > .wrap.about-grid,
   .process > .wrap.process-grid,
-  .contact .contact-inner,
-  footer > .wrap{
+  .contact .contact-inner{
     width:100% !important;
     max-width:none !important;
     margin-left:0 !important;
@@ -1529,8 +1539,7 @@
   .services > .wrap,
   .about > .wrap.about-grid,
   .process > .wrap.process-grid,
-  .contact .contact-inner,
-  footer > .wrap{
+  .contact .contact-inner{
     width:100% !important;
     max-width:none !important;
     margin-left:0 !important;
@@ -1545,8 +1554,7 @@
   .services > .wrap,
   .about > .wrap.about-grid,
   .process > .wrap.process-grid,
-  .contact .contact-inner,
-  footer > .wrap{
+  .contact .contact-inner{
     width:100% !important;
     max-width:none !important;
     margin-left:0 !important;
