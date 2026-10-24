@@ -1,0 +1,8 @@
+  @media (max-width:880px){
+    header{position:static!important;background:var(--navy);}
+    nav{flex-wrap:wrap;}
+    .nav-links{display:flex!important;position:static;flex-direction:row;flex-wrap:wrap;gap:0 18px;background:none;padding:6px 0;border:0;box-shadow:none;}
+    .nav-links a{padding:8px 0;border-bottom:0;font-size:17px;}
+    .menu-toggle{display:none!important;}
+    .hero{padding-top:64px;}
+  }

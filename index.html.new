@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accio Freight | Movemos tu carga, impulsamos tu empresa</title>
+<meta name="description" content="Agencia de carga en Perú: importaciones y exportaciones por vía marítima, aérea y terrestre, con respuesta directa y seguimiento de tu operación.">
+<meta name="theme-color" content="#080c16">
+<link rel="canonical" href="https://acciofreight.com/">
+
+<!-- Favicon y Touch Icon para Google y Navegadores -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
+
+<!-- Open Graph / Redes Sociales (WhatsApp, LinkedIn, Facebook) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://acciofreight.com/">
+<meta property="og:title" content="Accio Freight | Movemos tu carga, impulsamos tu empresa">
+<meta property="og:description" content="Agencia de carga en Perú: importaciones y exportaciones por vía marítima, aérea y terrestre, con respuesta directa y seguimiento de tu operación.">
+<meta property="og:image" content="https://acciofreight.com/favicon.png">
+<meta property="og:site_name" content="Accio Freight">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Accio Freight | Movemos tu carga, impulsamos tu empresa">
+<meta name="twitter:description" content="Agencia de carga en Perú: importaciones y exportaciones por vía marítima, aérea y terrestre.">
+<meta name="twitter:image" content="https://acciofreight.com/favicon.png">
+
+<!-- Datos Estructurados Schema.org para Google (Knowledge Graph y Logo) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Accio Freight",
+  "alternateName": "ACCIO FREIGHT SAC",
+  "url": "https://acciofreight.com/",
+  "logo": "https://acciofreight.com/favicon.png",
+  "description": "Agencia de carga en Perú: importaciones y exportaciones por vía marítima, aérea y terrestre.",
+  "sameAs": [
+    "https://es.linkedin.com/company/accio-freight"
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/index.css">
+<noscript><link rel="stylesheet" href="css/index-noscript.css"></noscript>
+
+</head>
+<body>
+<a href="#main-content" class="sr-only focusable" tabindex="0">Saltar al contenido</a>
+
+<header id="siteHeader">
+  <div class="wrap header-pill">
+    <a class="logo" href="#inicio" aria-label="Accio Freight — Inicio">
+      <img src="logo.png" alt="Accio Freight" class="logo-mark" width="301" height="235">
+      <span class="logo-text"><strong>ACCIO</strong><small>FREIGHT</small></span>
+    </a>
+    <nav class="nav-menu">
+      <div class="nav-links" id="navLinks">
+        <a href="#inicio" class="nav-link active">Inicio</a>
+        <a href="#nosotros" class="nav-link">Nosotros</a>
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#" class="nav-link" aria-label="Blog (próximamente)">Blog</a>
+        <a href="#contacto" class="nav-link">Contáctanos</a>
+      </div>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-cta" href="#contacto">COTIZA AHORA</a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+<section class="hero" id="inicio">
+  <div class="hero-content">
+    <h1>Movemos tu<br>carga,<br><em>Impulsamos tu<br>empresa.</em></h1>
+    <p>Marítimo, aéreo y terrestre en una sola operación.<br>Diseñamos soluciones ágiles, claras y con seguimiento<br class="hero-desktop"> directo para que tu carga avance sin perder tiempo.</p>
+    <a class="btn hero-btn" href="#contacto">COTIZA AHORA</a>
+  </div>
+</section>
+
+<section class="services" id="servicios">
+  <div class="wrap">
+    <div class="eyebrow">TODOS LOS MODOS, UNA SOLUCIÓN.</div>
+    <h2>Movemos lo que<em>tu empresa necesita.</em></h2>
+    <p class="lead">Elegimos la combinación correcta de transporte según tiempos, costo, tipo de carga y destino.</p>
+
+    <div class="cards">
+      <div class="card card-1">
+        <span class="card-tag-pill">FCL · LCL · IMPORT · EXPORT</span>
+        <div class="card-inner">
+          <div class="card-tag">01 / OCEAN</div>
+          <h3>Transporte marítimo</h3>
+          <p>Importación y exportación FCL y LCL con cobertura global, coordinación integral y seguimiento durante todo el trayecto.</p>
+          <a class="link" href="#contacto">COTIZAR MARÍTIMO →</a>
+        </div>
+      </div>
+      <div class="card card-2">
+        <span class="card-tag-pill">FAST · GLOBAL · PRIORITY</span>
+        <div class="card-inner">
+          <div class="card-tag">02 / AIR</div>
+          <h3>Transporte aéreo</h3>
+          <p>Soluciones rápidas y seguras para cargas urgentes, con conexiones internacionales y monitoreo continuo.</p>
+          <a class="link" href="#contacto">COTIZAR AÉREO →</a>
+        </div>
+      </div>
+      <div class="card card-3">
+        <span class="card-tag-pill">NATIONAL · REGIONAL · DOOR TO DOOR</span>
+        <div class="card-inner">
+          <div class="card-tag">03 / GROUND</div>
+          <h3>Transporte terrestre</h3>
+          <p>Distribución nacional e internacional con operaciones flexibles, confiables y coordinadas con el resto de tu cadena logística.</p>
+          <a class="link" href="#contacto">COTIZAR TERRESTRE →</a>
+        </div>
+      </div>
+      <div class="card card-4">
+        <span class="card-tag-pill">IMPORT · EXPORT · DESPACHO ADUANERO</span>
+        <div class="card-inner">
+          <div class="card-tag">04 / ADUANA</div>
+          <h3>Agenciamiento aduanero</h3>
+          <p>Clasificación arancelaria, trámites y despacho ante Aduanas, con cumplimiento normativo para que tu carga cruce la frontera sin demoras.</p>
+          <a class="link" href="#contacto">COTIZAR ADUANA →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="nosotros">
+  <div class="wrap about-grid">
+    <div>
+      <div class="eyebrow">NOSOTROS</div>
+      <h2>Tu carga,<em>nuestra<br>responsabilidad.</em></h2>
+      <p>Somos una empresa joven con mentalidad de operador: menos burocracia, más respuesta. Combinamos experiencia real, comunicación directa y una gestión pensada para negocios que necesitan avanzar.</p>
+    </div>
+    <div class="feature-grid">
+      <div class="feature">
+        <img src="icons/global_network.png" alt="Global Network" class="feature-icon" width="92" height="92" loading="lazy">
+        <span>Global<br>Network</span>
+      </div>
+      <div class="feature">
+        <img src="icons/cost_efficent.png" alt="Cost Efficient" class="feature-icon" width="92" height="92" loading="lazy">
+        <span>Cost<br>Efficient</span>
+      </div>
+      <div class="feature">
+        <img src="icons/on_time_delivery.png" alt="On-Time Delivery" class="feature-icon" width="92" height="92" loading="lazy">
+        <span>On-Time<br>Delivery</span>
+      </div>
+      <div class="feature">
+        <img src="icons/end_to_end_handling.png" alt="End-to-End Handling" class="feature-icon" width="92" height="92" loading="lazy">
+        <span>End-to-End<br>Handling</span>
+      </div>
+      <div class="feature">
+        <img src="icons/custom_expertise.png" alt="Customs Expertise" class="feature-icon" width="92" height="92" loading="lazy">
+        <span>Customs<br>Expertise</span>
+      </div>
+      <div class="feature">
+        <img src="icons/live_tracking.png" alt="Live Tracking" class="feature-icon" width="92" height="92" loading="lazy">
+        <span>Live<br>Tracking</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="process">
+  <div class="wrap process-grid">
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-body"><h4>Cuéntanos tu operación</h4><p>Origen, destino, tipo de carga, volumen, fecha objetivo y cualquier restricción.</p></div>
+        <div class="step-arrow">↗</div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-body"><h4>Diseñamos la mejor ruta</h4><p>Evaluamos modalidad, tiempos, costo y riesgos para construir una propuesta clara.</p></div>
+        <div class="step-arrow">↗</div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-body"><h4>Coordinamos cada punto</h4><p>Reserva, recojo, documentación, despacho y coordinación con los actores involucrados.</p></div>
+        <div class="step-arrow">↗</div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-body"><h4>Te mantenemos informado</h4><p>Actualizaciones claras sobre hitos, desvíos y próximos pasos de la operación.</p></div>
+        <div class="step-arrow">↗</div>
+      </div>
+      <div class="step">
+        <div class="step-num">05</div>
+        <div class="step-body"><h4>Cerramos y aprendemos</h4><p>Confirmamos la entrega y revisamos oportunidades de mejora para el siguiente envío.</p></div>
+        <div class="step-arrow">↗</div>
+      </div>
+    </div>
+
+    <div class="process-copy">
+      <div class="eyebrow">CÓMO TRABAJAMOS</div>
+      <h2>Una operación simple,<em>de principio a fin.</em></h2>
+      <p>Cada envío tiene un responsable, una ruta y un siguiente paso claro. Diseñamos la operación contigo y la seguimos hasta el cierre.</p>
+
+      <svg class="process-art" viewBox="0 0 1280 230" preserveAspectRatio="xMidYMax slice" fill="none" aria-hidden="true" focusable="false">
+        <!-- Agua / reflejo y línea base de muelle -->
+        <path d="M0 195 Q 120 185 240 195 T 480 195 T 720 193 T 960 195 T 1200 193 T 1280 195 V230 H0 Z"
+              fill="#B5D4F4" opacity="0.28" />
+        <path d="M0 202 Q 120 194 240 202 T 480 202 T 720 200 T 960 202 T 1200 200 T 1280 202 V230 H0 Z"
+              fill="#526784" opacity="0.18" />
+        <line x1="0" y1="195" x2="1280" y2="195" stroke="#526784" stroke-width="1.8" opacity="0.7" />
+
+        <!-- Grúa pórtico 1 (izquierda) -->
+        <g stroke="#526784" stroke-width="2.2" opacity="0.78" stroke-linecap="round">
+          <line x1="80" y1="55" x2="80" y2="195" />
+          <line x1="160" y1="55" x2="160" y2="195" />
+          <line x1="60" y1="55" x2="180" y2="55" />
+          <line x1="60" y1="62" x2="180" y2="62" />
+          <line x1="110" y1="62" x2="110" y2="110" />
+          <rect x="95" y="62" width="30" height="14" fill="#d8dde8" stroke="#526784" stroke-width="1" />
+        </g>
+        <g opacity="0.82">
+          <rect x="98" y="110" width="24" height="14" fill="#2250A6" stroke="#526784" stroke-width="1" />
+        </g>
+
+        <!-- Grúa pórtico 2 (centro-izquierda) -->
+        <g stroke="#526784" stroke-width="2.2" opacity="0.85" stroke-linecap="round">
+          <line x1="300" y1="40" x2="300" y2="195" />
+          <line x1="410" y1="40" x2="410" y2="195" />
+          <line x1="280" y1="40" x2="430" y2="40" />
+          <line x1="280" y1="48" x2="430" y2="48" />
+          <line x1="360" y1="48" x2="360" y2="100" />
+          <rect x="340" y="48" width="40" height="18" fill="#d8dde8" stroke="#526784" stroke-width="1" />
+        </g>
+        <!-- Stacks de contenedores (centro) -->
+        <g opacity="0.9" stroke="#526784" stroke-width="1">
+          <rect x="420" y="165" width="34" height="22" fill="#2250A6" />
+          <rect x="454" y="165" width="34" height="22" fill="#ffffff" />
+          <rect x="488" y="165" width="34" height="22" fill="#B5D4F4" />
+          <rect x="420" y="143" width="34" height="22" fill="#B5D4F4" />
+          <rect x="454" y="143" width="34" height="22" fill="#2250A6" />
+          <rect x="488" y="143" width="34" height="22" fill="#ffffff" />
+          <rect x="420" y="121" width="34" height="22" fill="#ffffff" />
+          <rect x="454" y="121" width="34" height="22" fill="#B5D4F4" />
+        </g>
+
+        <!-- Mástil / antena -->
+        <g stroke="#526784" stroke-width="1.6" opacity="0.65">
+          <line x1="610" y1="60" x2="610" y2="195" />
+          <line x1="595" y1="80" x2="625" y2="80" />
+          <line x1="600" y1="70" x2="620" y2="70" />
+        </g>
+
+        <!-- Grúa pórtico 3 (derecha, gran formato) -->
+        <g stroke="#526784" stroke-width="2.4" opacity="0.9" stroke-linecap="round">
+          <line x1="740" y1="35" x2="740" y2="195" />
+          <line x1="880" y1="35" x2="880" y2="195" />
+          <line x1="720" y1="35" x2="900" y2="35" />
+          <line x1="720" y1="44" x2="900" y2="44" />
+          <line x1="800" y1="44" x2="800" y2="95" />
+          <rect x="775" y="44" width="50" height="22" fill="#d8dde8" stroke="#526784" stroke-width="1.2" />
+          <!-- Refuerzos diagonales -->
+          <line x1="740" y1="80" x2="800" y2="44" stroke-width="1.6" />
+          <line x1="880" y1="80" x2="800" y2="44" stroke-width="1.6" />
+        </g>
+        <!-- Contenedor suspendido por grúa 3 -->
+        <g opacity="0.9">
+          <rect x="784" y="95" width="32" height="18" fill="#2250A6" stroke="#526784" stroke-width="1.2" />
+          <rect x="784" y="113" width="32" height="3" fill="#526784" />
+        </g>
+
+        <!-- Stacks de contenedores (derecha) -->
+        <g opacity="0.85" stroke="#526784" stroke-width="1">
+          <rect x="910" y="165" width="34" height="22" fill="#ffffff" />
+          <rect x="944" y="165" width="34" height="22" fill="#2250A6" />
+          <rect x="978" y="165" width="34" height="22" fill="#B5D4F4" />
+          <rect x="1012" y="165" width="34" height="22" fill="#ffffff" />
+          <rect x="910" y="143" width="34" height="22" fill="#B5D4F4" />
+          <rect x="944" y="143" width="34" height="22" fill="#ffffff" />
+          <rect x="978" y="143" width="34" height="22" fill="#2250A6" />
+        </g>
+
+        <!-- Silueta buque portacontenedores (derecha) -->
+        <g opacity="0.75" stroke="#526784" stroke-linecap="round">
+          <path d="M1060 170 L1100 160 L1240 160 L1260 170 L1260 190 L1060 190 Z" fill="#d8dde8" stroke-width="1.2" />
+          <rect x="1105" y="140" width="20" height="20" fill="#B5D4F4" stroke-width="1" />
+          <rect x="1128" y="135" width="20" height="25" fill="#2250A6" stroke-width="1" />
+          <rect x="1151" y="140" width="20" height="20" fill="#ffffff" stroke-width="1" />
+          <rect x="1174" y="133" width="20" height="27" fill="#B5D4F4" stroke-width="1" />
+          <rect x="1197" y="138" width="20" height="22" fill="#2250A6" stroke-width="1" />
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+
+<section class="contact" id="contacto">
+  <div class="contact-bg">
+    <div class="contact-inner">
+      <div class="contact-text">
+        <div class="eyebrow">HABLEMOS</div>
+        <h2>Tu próxima operación<em>empieza aquí.</em></h2>
+        <p>Cuéntanos qué necesitas mover. Nuestro equipo revisará tu solicitud y te responderá por WhatsApp o correo.</p>
+      </div>
+      <form id="contactForm" action="https://formsubmit.co/ajax/gcermeno@acciofreight.com" method="POST">
+        <input type="hidden" name="_template" value="box">
+        <input type="hidden" name="_subject" value="Nueva consulta desde ACCIO FREIGHT">
+        <input type="hidden" name="_cc" value="pirrazabal@acciofreight.com">
+        <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="form-row">
+          <div class="field">
+            <label for="nombre">Nombre completo <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" maxlength="120" required autocomplete="name" aria-required="true" aria-describedby="err-nombre">
+            <div class="field-error" id="err-nombre" role="alert" aria-live="polite"></div>
+          </div>
+          <div class="field">
+            <label for="empresa">Empresa</label>
+            <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" maxlength="160" autocomplete="organization">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="email">Correo electrónico <span class="req" aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" placeholder="nombre@empresa.com" maxlength="254" required autocomplete="email" aria-required="true" aria-describedby="err-email">
+            <div class="field-error" id="err-email" role="alert" aria-live="polite"></div>
+          </div>
+          <div class="field">
+            <label for="telefono">Teléfono / WhatsApp</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="+51 999 999 999" maxlength="32" autocomplete="tel">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="servicio">Servicio de interés <span class="req" aria-hidden="true">*</span></label>
+            <select id="servicio" name="servicio" required aria-required="true" aria-describedby="err-servicio">
+              <option value="">Selecciona una opción</option>
+              <option value="maritime">Transporte marítimo</option>
+              <option value="air">Transporte aéreo</option>
+              <option value="land">Transporte terrestre</option>
+              <option value="insurance">Seguro de carga</option>
+              <option value="other">Otro / consulta general</option>
+            </select>
+            <div class="field-error" id="err-servicio" role="alert" aria-live="polite"></div>
+          </div>
+          <div class="field">
+            <label for="nave">Nave o tipo de carga</label>
+            <input type="text" id="nave" name="nave" placeholder="Nave o tipo de carga" maxlength="160">
+          </div>
+        </div>
+        <div class="field">
+          <label for="mensaje">Mensaje <span class="req" aria-hidden="true">*</span></label>
+          <textarea id="mensaje" name="mensaje" placeholder="Describe tu carga y operación" required aria-required="true" aria-describedby="err-mensaje" maxlength="1000"></textarea>
+          <div class="char-count" role="status" aria-live="polite"><span id="charCount">0</span>/1000</div>
+          <div class="field-error" id="err-mensaje" role="alert" aria-live="polite"></div>
+        </div>
+        <div class="field">
+          <label class="consent">
+            <input type="checkbox" name="consent" id="consent" required aria-required="true" aria-describedby="err-consent">
+            <span>Acepto la <a href="legal.html#privacidad" target="_blank" rel="noopener">Política de privacidad</a> y autorizo el contacto comercial.</span>
+          </label>
+          <div class="field-error" id="err-consent" role="alert" aria-live="polite"></div>
+        </div>
+        <div class="form-footer">
+          <p>Te contactaremos sobre esta solicitud.</p>
+          <button class="btn" type="submit" id="submitBtn">
+            <span class="spinner" aria-hidden="true"></span>
+            <span class="btn-text">Enviar consulta</span>
+          </button>
+        </div>
+        <div class="form-success" id="formSuccess" role="status" aria-live="polite">
+          <span>Consulta recibida. Nuestro equipo revisará tu solicitud y te contactará.</span>
+        </div>
+        <div class="form-error-banner" id="formErrorBanner" role="alert" aria-live="assertive" tabindex="-1">
+          <span>No pudimos enviar tu consulta. Vuelve a intentarlo o contáctanos por <a class="form-error-whatsapp" href="https://wa.me/51957518881" target="_blank" rel="noopener">WhatsApp</a>.</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div>
+      <a class="logo" href="#inicio">
+        <img src="logo.png" alt="Accio Freight" class="logo-mark" width="301" height="235">
+        Accio Freight
+      </a>
+      <p>Soluciones logísticas integrales con trazabilidad en tiempo real y atención personalizada.</p>
+    </div>
+    <div>
+      <h5>Servicios</h5>
+      <ul>
+        <li><a href="#servicios">Transporte marítimo</a></li>
+        <li><a href="#servicios">Transporte aéreo</a></li>
+        <li><a href="#servicios">Transporte terrestre</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Quiénes somos</h5>
+      <ul>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#" class="disabled" aria-disabled="true" tabindex="-1">Blog</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 ACCIO FREIGHT SAC. Todos los derechos reservados.</span>
+    <a href="legal.html">Política de privacidad</a>
+  </div>
+</footer>
+
+<script src="js/index.js" defer></script>
+
+
+</body>
+</html>

@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<script>document.documentElement.setAttribute('data-theme', (function(){try{return localStorage.getItem('theme')||'light';}catch(e){return 'light';}})());</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Documentos Legales — ACCIO FREIGHT SAC</title>
 <meta name="description" content="Política de Privacidad y Términos y Condiciones de ACCIO FREIGHT SAC — Agenciamiento marítimo en Callao, Perú.">
@@ -14,375 +15,37 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
 
-<style>
-  :root{
-    --blue:#1e58e8;
-    --blue-dark:#123ea8;
-    --lavender:#e7edfc;
-    --navy:#080c16;
-    --black:#080c16;
-    --ink:#101425;
-    --muted:#5c6272;
-    --white:#ffffff;
-    --bone:#ffffff;
-    --ice:#e7edfc;
-    --steel:#5c6272;
-    --line:rgba(255,255,255,0.12);
-    --line-strong:rgba(255,255,255,0.2);
-    --shadow:rgba(16,20,37,0.10);
-    --radius:14px;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth; scroll-padding-top:140px;}
-  body{
-    font-family:'Barlow',system-ui,sans-serif;
-    background:var(--white);
-    color:var(--ink);
-    line-height:1.55;
-    font-size:20.8px;
-    text-wrap:pretty;
-    overflow-x:hidden;
-    -webkit-font-smoothing:antialiased;
-  }
-  body.nav-open{overflow:hidden;}
-  h1,h2,h3,h4{font-family:'Barlow',sans-serif;}
-  a{text-decoration:none; color:inherit;}
-  .mono{font-family:'Barlow',sans-serif;}
-  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
-  .sr-only.focusable:focus{
-    position:fixed; top:12px; left:12px; width:auto; height:auto; margin:0; overflow:visible;
-    clip:auto; white-space:normal; z-index:9999; background:var(--blue); color:var(--white);
-    padding:12px 20px; border-radius:999px; font-family:'Barlow',sans-serif; font-weight:600;
-  }
-  .container{max-width:1240px; margin:0 auto; padding:0 40px;}
-  .container-narrow{max-width:860px; margin:0 auto; padding:0 40px;}
-  @media(max-width:640px){.container, .container-narrow{padding:0 22px;}}
-
-  @media (prefers-reduced-motion: reduce){
-    *{animation:none !important; transition:none !important; scroll-behavior:auto !important;}
-  }
-
-  ::-webkit-scrollbar { width: 8px; }
-  ::-webkit-scrollbar-track { background: var(--lavender); }
-  ::-webkit-scrollbar-thumb { background: var(--blue); border-radius: 999px; }
-  ::-webkit-scrollbar-thumb:hover { background: var(--blue-dark); }
-
-  :focus-visible{outline:2px solid var(--blue); outline-offset:3px; border-radius:2px;}
-
-  /* ===== NAV ===== */
-  header{
-    position:fixed; top:0; left:0; right:0; z-index:100;
-    background:rgba(8,12,22,0.92);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid rgba(255,255,255,0.08);
-  }
-  nav{
-    display:flex; align-items:center; justify-content:space-between;
-    height:76px; max-width:1240px; margin:0 auto; padding:0 40px;
-  }
-  .brand{display:flex; align-items:center; gap:14px; color:#fff; font-weight:700;}
-  .brand:hover{color:var(--ice);}
-  .brand-mark{height:34px; width:auto; flex-shrink:0; display:block;}
-  .brand-name{
-    font-family:'Barlow',sans-serif; font-size:1.2rem; font-weight:700;
-    white-space:nowrap;
-  }
-  .nav-links{display:flex; gap:36px; list-style:none; align-items:center;}
-  .nav-links > li{position:relative;}
-  .nav-links > li > a{
-    color:rgba(255,255,255,.95); font-size:19.5px; font-weight:500;
-    position:relative; padding:6px 0; cursor:pointer; display:inline-flex; align-items:center; gap:5px;
-  }
-  .nav-links > li > a::after{
-    content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:var(--blue);
-    transform:scaleX(0); transform-origin:left; transition:transform 0.25s ease;
-  }
-  .nav-links > li > a:hover::after,
-  .nav-links > li > a:focus-visible::after,
-  .nav-links > li.active > a::after{transform:scaleX(1);}
-  .nav-links > li.active > a{color:#fff;}
-  .nav-cta{
-    display:inline-flex; align-items:center; gap:6px;
-    background:#e2e7ee; color:#101425; padding:12px 22px; border-radius:999px;
-    font-size:16.25px; font-weight:600; letter-spacing:.3px;
-    border:none; transition:background 0.2s ease; white-space:nowrap;
-  }
-  .nav-cta:hover{background:#fff;}
-  .nav-toggle{display:none; background:none; border:none; cursor:pointer; padding:8px; min-width:44px; min-height:44px;}
-  .nav-toggle span{display:block; width:24px; height:2px; background:#fff; margin:5px 0; transition:0.25s;}
-  .nav-toggle.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
-  .nav-toggle.open span:nth-child(2){opacity:0;}
-  .nav-toggle.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
-  .nav-overlay{
-    position:fixed; inset:76px 0 0; z-index:89;
-    background:rgba(8,12,22,0.55);
-    opacity:0; visibility:hidden; transition:opacity 0.35s ease;
-    -webkit-tap-highlight-color:transparent;
-  }
-  .nav-overlay.show{opacity:1; visibility:visible;}
-
-  @media(max-width:880px){
-    .nav-links{
-      position:fixed; top:76px; left:0; right:0; background:var(--navy);
-      display:grid; grid-template-rows:0fr; transition:grid-template-rows 0.35s ease;
-      border-bottom:1px solid rgba(255,255,255,0.08);
-    }
-    .nav-links > *{ overflow:hidden; min-height:0; }
-    .nav-links.open{ grid-template-rows:1fr; max-height:560px; overflow-y:auto; }
-    .nav-links > li > a{display:block; padding:16px 32px; border-bottom:1px solid rgba(255,255,255,0.08);}
-    .nav-links > li > a::after{display:none;}
-    .nav-links > li.active > a{color:#fff; background:rgba(30,88,232,0.2);}
-    .nav-actions{display:none;}
-    .nav-toggle{display:block;}
-  }
-  .nav-actions{display:flex; align-items:center; gap:16px;}
-
-  /* ===== HERO LEGAL ===== */
-  .legal-hero{
-    background:var(--navy); color:#fff;
-    padding:150px 0 80px;
-    border-bottom:1px solid rgba(255,255,255,0.08);
-  }
-  .legal-hero .container-narrow{position:relative;}
-  .legal-eyebrow{
-    display:block; font-family:'Barlow',sans-serif; font-size:16.9px;
-    letter-spacing:.4px; text-transform:uppercase; font-weight:700; color:var(--blue);
-    margin-bottom:18px;
-  }
-  .legal-hero h1{
-    font-size:clamp(36.4px,4.94vw,54.6px); line-height:1.15; font-weight:400;
-    color:#fff; max-width:780px; text-shadow:none;
-  }
-  .legal-hero h1 em{font-style:italic; font-weight:700; color:#8fb3ff; display:block;}
-  .legal-hero .subtitle{
-    margin-top:24px; font-size:20.15px; max-width:640px;
-    color:rgba(255,255,255,.85); line-height:1.7;
-  }
-  .legal-hero .meta{
-    margin-top:32px; padding-top:24px;
-    border-top:1px solid rgba(255,255,255,0.12);
-    font-size:15.6px; color:rgba(255,255,255,.55); letter-spacing:.4px; text-transform:uppercase; font-weight:600;
-  }
-
-  /* ===== TABS ===== */
-  .tabs{
-    display:flex; background:var(--lavender);
-    border-bottom:1px solid rgba(30,88,232,0.15);
-    position:sticky; top:76px; z-index:50;
-  }
-  .tab{
-    flex:1; text-align:center; padding:22px 16px;
-    font-family:'Barlow',sans-serif; font-size:18.2px; font-weight:600;
-    letter-spacing:.3px; color:var(--muted);
-    cursor:pointer; background:none; border:none;
-    border-bottom:3px solid transparent; transition:all 0.25s ease;
-  }
-  .tab:hover{color:var(--blue);}
-  .tab.active{color:var(--ink); border-bottom-color:var(--blue); background:var(--white);}
-
-  /* ===== CONTENIDO LEGAL ===== */
-  .legal-content{padding:clamp(64px, 8vw, 112px) 0 96px; background:var(--white);}
-  .legal-section{display:none;}
-  .legal-section.active{display:block;}
-
-  .legal-section h2{
-    font-size:clamp(36.4px,4.68vw,52px); font-weight:400; line-height:1.2;
-    color:var(--ink);
-    margin:56px 0 18px; padding-top:24px;
-    border-top:1px solid rgba(30,88,232,0.15);
-  }
-  .legal-section h2:first-of-type{
-    margin-top:0; padding-top:0; border-top:none;
-  }
-  .legal-section h3{
-    font-size:20.15px; color:var(--ink); font-weight:600;
-    margin:36px 0 12px;
-  }
-  .legal-section p,
-  .legal-section li{
-    font-size:19.5px; color:var(--muted); line-height:1.75;
-    margin-bottom:14px;
-  }
-  .legal-section ul, .legal-section ol{padding-left:24px; margin-bottom:20px;}
-  .legal-section li{margin-bottom:8px;}
-  .legal-section li::marker{color:var(--blue); font-weight:600;}
-
-  .highlight{
-    background:var(--lavender);
-    border:1px solid rgba(30,88,232,0.12);
-    border-left:4px solid var(--blue);
-    padding:22px 26px; border-radius:var(--radius);
-    margin:24px 0;
-    font-size:18.2px; line-height:1.7;
-  }
-  .highlight strong{color:var(--ink); font-weight:700;}
-
-  table{
-    width:100%; border-collapse:collapse; margin:24px 0;
-    font-size:17.55px; line-height:1.6;
-    border:1px solid rgba(30,88,232,0.12);
-    border-radius:var(--radius); overflow:hidden;
-  }
-  .table-scroll{max-width:100%; overflow-x:auto; margin:24px 0;}
-  .table-scroll table{margin:0; min-width:620px;}
-  thead{background:var(--lavender);}
-  th, td{
-    padding:14px 18px; text-align:left;
-    border-bottom:1px solid rgba(30,88,232,0.10);
-  }
-  th{
-    font-family:'Barlow',sans-serif; font-size:16.9px;
-    text-transform:uppercase; letter-spacing:.4px;
-    color:var(--ink); font-weight:700;
-    border-bottom:1px solid rgba(30,88,232,0.2);
-  }
-  td{color:var(--muted);}
-  tbody tr:last-child td{border-bottom:none;}
-
-  .toc{
-    background:var(--lavender);
-    border:1px solid rgba(30,88,232,0.12);
-    border-radius:var(--radius); padding:26px 30px; margin-bottom:56px;
-  }
-  .toc h4{
-    font-family:'Barlow',sans-serif; font-size:16.9px;
-    text-transform:uppercase; letter-spacing:.4px;
-    color:var(--blue); margin-bottom:14px; font-weight:700;
-  }
-  .toc ol{counter-reset:toc; list-style:none; padding-left:0; margin-bottom:0;}
-  .toc li{
-    counter-increment:toc; padding:8px 0;
-    border-bottom:1px solid rgba(30,88,232,0.08);
-    font-size:18.2px; color:var(--ink);
-  }
-  .toc li::before{
-    content:counter(toc, decimal-leading-zero) "  ";
-    color:var(--blue); font-weight:700; font-size:17.55px;
-  }
-  .toc li:last-child{border-bottom:none;}
-  .toc a{color:var(--ink); transition:color 0.2s;}
-  .toc a:hover{color:var(--blue);}
-
-  .legal-section a{color:var(--blue); border-bottom:1px solid rgba(30,88,232,0.35); transition:border-color 0.2s, color 0.2s;}
-  .legal-section a:hover{color:var(--blue-dark); border-bottom-color:var(--blue-dark);}
-
-  /* ===== WHATSAPP FLOAT ===== */
-  .whatsapp-float{
-    position:fixed; bottom:calc(28px + env(safe-area-inset-bottom)); right:calc(28px + env(safe-area-inset-right)); z-index:99;
-    width:56px; height:56px; border-radius:50%;
-    background:#25D366; color:var(--white);
-    display:flex; align-items:center; justify-content:center;
-    box-shadow:0 4px 16px rgba(37,211,102,0.35);
-    transition:transform 0.25s ease, box-shadow 0.25s ease;
-  }
-  .whatsapp-float:hover{transform:scale(1.08); box-shadow:0 6px 24px rgba(37,211,102,0.45);}
-  .whatsapp-float svg{width:26px; height:26px; fill:var(--white);}
-  .whatsapp-float .tooltip{
-    position:absolute; right:68px; background:var(--navy); color:#fff;
-    padding:8px 14px; border-radius:999px; font-size:16.25px; white-space:nowrap;
-    opacity:0; pointer-events:none; transition:opacity 0.2s;
-  }
-  .whatsapp-float:hover .tooltip{opacity:1;}
-  @media(max-width:640px){
-    .whatsapp-float{width:48px; height:48px; right:calc(16px + env(safe-area-inset-right)); bottom:calc(16px + env(safe-area-inset-bottom));}
-    .whatsapp-float svg{width:22px; height:22px;}
-    .whatsapp-float .tooltip{right:auto; left:68px;}
-  }
-
-  /* ===== BACK TO TOP ===== */
-  .back-to-top{
-    position:fixed; bottom:calc(28px + env(safe-area-inset-bottom)); left:calc(28px + env(safe-area-inset-left)); z-index:99;
-    width:44px; height:44px; border-radius:50%;
-    background:var(--navy); border:1px solid rgba(255,255,255,0.15);
-    display:flex; align-items:center; justify-content:center;
-    opacity:0; visibility:hidden; transform:translateY(12px);
-    transition:all 0.3s ease; cursor:pointer;
-  }
-  .back-to-top.show{opacity:1; visibility:visible; transform:translateY(0);}
-  .back-to-top:hover{background:var(--blue); border-color:var(--blue);}
-  .back-to-top svg{width:18px; height:18px; stroke:#fff; fill:none; transition:stroke 0.2s;}
-  .back-to-top:hover svg{stroke:#fff;}
-  @media(max-width:640px){.back-to-top{left:calc(16px + env(safe-area-inset-left)); bottom:calc(80px + env(safe-area-inset-bottom)); width:44px; height:44px;}}
-
-  /* ===== FOOTER (estilo index.html) ===== */
-  footer{background:var(--navy); color:rgba(255,255,255,.6); border-top:none; padding:56px 0 32px;}
-  .footer-main{padding:0;}
-  .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:32px;}
-  .footer-grid .footer-col{position:relative; padding-left:0;}
-  .footer-grid .footer-col:not(:first-child)::before{display:none;}
-  .footer-brand{padding-right:0;}
-  @media(max-width:880px){.footer-grid{grid-template-columns:1fr 1fr; gap:40px;}}
-  @media(max-width:520px){.footer-grid{grid-template-columns:1fr; gap:32px;}}
-  .footer-brand p{font-size:16.9px; color:rgba(255,255,255,.6); max-width:280px; line-height:1.6; margin-top:4px;}
-  .footer-social{display:flex; gap:12px; margin-top:20px;}
-  .footer-social a{
-    width:44px; height:44px; border-radius:50%;
-    background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12);
-    display:flex; align-items:center; justify-content:center;
-    transition:background 0.2s, border-color 0.2s;
-  }
-  .footer-social a:hover{background:rgba(30,88,232,0.35); border-color:var(--blue);}
-  .footer-social svg{width:16px; height:16px; fill:rgba(255,255,255,.7);}
-  .footer-social a:hover svg{fill:#fff;}
-  .footer-brand-link{margin-bottom:16px;}
-  .brand.footer-brand-link{color:#fff;}
-  .footer-col h4, .footer-col h5{
-    font-family:'Barlow',sans-serif; font-size:14.95px; letter-spacing:.6px; text-transform:uppercase;
-    color:rgba(255,255,255,.85); margin-bottom:16px; font-weight:600;
-  }
-  .footer-col a{
-    display:block; font-size:17.55px; color:rgba(255,255,255,.6); margin-bottom:10px;
-    transition:color 0.2s; font-weight:400; border-bottom:none;
-  }
-  .footer-col a:hover{color:#fff;}
-  .footer-bottom{
-    border-top:1px solid rgba(255,255,255,.08); padding:24px 0 0; margin-top:44px;
-    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
-    font-size:15.6px; text-align:left;
-  }
-  .footer-bottom p{font-size:15.6px; color:rgba(255,255,255,.55); font-family:'Barlow',sans-serif;}
-  .footer-bottom-links{display:flex; gap:20px;}
-  .footer-bottom-links a{font-size:15.6px; color:rgba(255,255,255,.55); font-family:'Barlow',sans-serif; transition:color 0.2s; border-bottom:none;}
-  .footer-bottom-links a:hover{color:#fff;}
-
-  /* ===== REVEAL ===== */
-  .reveal-up{opacity:0; transform:translateY(20px); transition:opacity 0.6s ease, transform 0.6s ease;}
-  .reveal-up.visible{opacity:1; transform:translateY(0);}
-
-  /* ===== PRINT ===== */
-  @media print{
-    header, .whatsapp-float, .back-to-top, .nav-toggle, .tabs{display:none !important;}
-    body{background:white; color:black; overflow:visible; font-size:12pt;}
-    .legal-hero{background:white; color:black; padding:20px 0; border-bottom:1px solid #ccc;}
-    .legal-hero h1, .legal-hero .subtitle, .legal-hero .meta, .legal-eyebrow{color:black;}
-    .legal-content{padding:24px 0;}
-    .legal-section h2, .legal-section h3, .legal-section p, .legal-section li, .legal-section a{color:black;}
-    .highlight, .toc{background:white; border:1px solid #ccc;}
-    a[href^="http"]:after{content:" (" attr(href) ")"; font-size:0.8em; color:#555;}
-  }
-</style>
+<link rel="stylesheet" href="css/legal.css">
 </head>
 <body>
 
-<a href="#main-content" class="sr-only focusable" tabindex="0">Saltar al contenido</a>
+<a href="#main-content" class="sr-only focusable" tabindex="0" data-i18n="a11y.skip">Saltar al contenido</a>
 
 <header>
   <nav>
-    <a href="index.html" class="brand" aria-label="ACCIO FREIGHT — Inicio">
-      <img src="logo.png" alt="Accio Freight" class="brand-mark">
-      <span class="brand-name">Accio Freight</span>
+    <a href="index.html" class="brand" aria-label="ACCIO FREIGHT — Inicio" data-i18n-attr="aria-label:nav.brandAria">
+      <img src="logo_name.png" alt="Accio Freight" class="brand-mark" width="2048" height="768">
     </a>
     <ul class="nav-links" id="navLinks" aria-hidden="false">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="index.html#nosotros">Nosotros</a></li>
-      <li><a href="index.html#servicios">Servicios</a></li>
-      <li><a href="index.html#contacto">Contacto</a></li>
+      <li><a href="index.html" data-i18n="nav.home">Inicio</a></li>
+      <li><a href="index.html#nosotros" data-i18n="nav.about">Nosotros</a></li>
+      <li><a href="index.html#servicios" data-i18n="nav.services">Servicios</a></li>
+      <li><a href="index.html#contacto" data-i18n="nav.contact">Contacto</a></li>
     </ul>
     <div class="nav-actions">
-      <a href="index.html#contacto" class="nav-cta">Cotizar carga</a>
+      <a href="index.html#contacto" class="nav-cta" data-i18n="nav.cta">Cotizar carga</a>
+    </div>
+    <div class="site-toggles">
+      <button type="button" class="lang-toggle" id="langToggle" aria-label="Switch language / Cambiar idioma">
+        <span class="lang-toggle-opt" data-lang-opt="es">ES</span><span class="lang-toggle-sep">/</span><span class="lang-toggle-opt" data-lang-opt="en">EN</span>
+      </button>
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Cambiar a tema oscuro" aria-pressed="false">
+        <svg class="theme-toggle-icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="theme-toggle-icon icon-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+      </button>
     </div>
     <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
-    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks" data-i18n-attr="aria-label:nav.openMenu">
       <span></span><span></span><span></span>
     </button>
   </nav>
@@ -390,16 +53,16 @@
 
 <section class="legal-hero">
   <div class="container-narrow">
-    <span class="legal-eyebrow">— Documentos legales</span>
-    <h1 id="page-title">Privacidad y <em>Términos</em></h1>
-    <p class="subtitle">Política de Privacidad y Términos y Condiciones de ACCIO FREIGHT SAC — Agenciamiento Marítimo en Callao, Perú.</p>
-    <div class="meta">Última actualización: julio 2026 · Vigente hasta nuevo aviso</div>
+    <span class="legal-eyebrow" data-i18n="hero.eyebrow">— Documentos legales</span>
+    <h1 id="page-title" data-i18n-html="hero.title">Privacidad y <em>Términos</em></h1>
+    <p class="subtitle" data-i18n="hero.subtitle">Política de Privacidad y Términos y Condiciones de ACCIO FREIGHT SAC — Agenciamiento Marítimo en Callao, Perú.</p>
+    <div class="meta" data-i18n="hero.meta">Última actualización: julio 2026 · Vigente hasta nuevo aviso</div>
   </div>
 </section>
 
 <div class="tabs" role="tablist" aria-label="Documentos legales">
-  <button class="tab active" id="privacyTab" role="tab" aria-selected="true" aria-controls="privacidad" tabindex="0" data-tab="privacidad" onclick="showTab('privacidad')">01 — Política de Privacidad</button>
-  <button class="tab" id="termsTab" role="tab" aria-selected="false" aria-controls="terminos" tabindex="-1" data-tab="terminos" onclick="showTab('terminos')">02 — Términos y Condiciones</button>
+  <button class="tab active" id="privacyTab" role="tab" aria-selected="true" aria-controls="privacidad" tabindex="0" data-tab="privacidad" onclick="showTab('privacidad')" data-i18n="tabs.privacy">01 — Política de Privacidad</button>
+  <button class="tab" id="termsTab" role="tab" aria-selected="false" aria-controls="terminos" tabindex="-1" data-tab="terminos" onclick="showTab('terminos')" data-i18n="tabs.terms">02 — Términos y Condiciones</button>
 </div>
 
 <main class="legal-content" id="main-content">
@@ -409,165 +72,165 @@
 <div class="legal-section active" id="privacidad" role="tabpanel" aria-labelledby="privacyTab" tabindex="-1">
 
   <div class="toc reveal-up">
-    <h4>Contenido</h4>
+    <h4 data-i18n="privacy.toc.title">Contenido</h4>
     <ol>
-      <li><a href="#pp-1">Identificación del responsable</a></li>
-      <li><a href="#pp-2">Datos personales que recopilamos</a></li>
-      <li><a href="#pp-3">Finalidades del tratamiento</a></li>
-      <li><a href="#pp-4">Base legal del tratamiento</a></li>
-      <li><a href="#pp-5">Compartición de datos con terceros</a></li>
-      <li><a href="#pp-6">Transferencias internacionales de datos</a></li>
-      <li><a href="#pp-7">Cookies y tecnologías de rastreo</a></li>
-      <li><a href="#pp-8">Conservación de datos</a></li>
-      <li><a href="#pp-9">Medidas de seguridad</a></li>
-      <li><a href="#pp-10">Derechos del titular (ARCO + internacionales)</a></li>
-      <li><a href="#pp-11">Menores de edad</a></li>
-      <li><a href="#pp-12">Cambios en esta política</a></li>
-      <li><a href="#pp-13">Contacto y ejercicio de derechos</a></li>
+      <li><a href="#pp-1" data-i18n="privacy.toc.i1">Identificación del responsable</a></li>
+      <li><a href="#pp-2" data-i18n="privacy.toc.i2">Datos personales que recopilamos</a></li>
+      <li><a href="#pp-3" data-i18n="privacy.toc.i3">Finalidades del tratamiento</a></li>
+      <li><a href="#pp-4" data-i18n="privacy.toc.i4">Base legal del tratamiento</a></li>
+      <li><a href="#pp-5" data-i18n="privacy.toc.i5">Compartición de datos con terceros</a></li>
+      <li><a href="#pp-6" data-i18n="privacy.toc.i6">Transferencias internacionales de datos</a></li>
+      <li><a href="#pp-7" data-i18n="privacy.toc.i7">Cookies y tecnologías de rastreo</a></li>
+      <li><a href="#pp-8" data-i18n="privacy.toc.i8">Conservación de datos</a></li>
+      <li><a href="#pp-9" data-i18n="privacy.toc.i9">Medidas de seguridad</a></li>
+      <li><a href="#pp-10" data-i18n="privacy.toc.i10">Derechos del titular (ARCO + internacionales)</a></li>
+      <li><a href="#pp-11" data-i18n="privacy.toc.i11">Menores de edad</a></li>
+      <li><a href="#pp-12" data-i18n="privacy.toc.i12">Cambios en esta política</a></li>
+      <li><a href="#pp-13" data-i18n="privacy.toc.i13">Contacto y ejercicio de derechos</a></li>
     </ol>
   </div>
 
-  <h2 id="pp-1">1. Identificación del responsable</h2>
-  <p>En cumplimiento de la Ley N° 29733 — Ley de Protección de Datos Personales y su Reglamento (D.S. 016-2024-JUS), le informamos que los datos personales que nos proporcione serán tratados por:</p>
+  <h2 id="pp-1" data-i18n="privacy.s1.title">1. Identificación del responsable</h2>
+  <p data-i18n="privacy.s1.p1">En cumplimiento de la Ley N° 29733 — Ley de Protección de Datos Personales y su Reglamento (D.S. 016-2024-JUS), le informamos que los datos personales que nos proporcione serán tratados por:</p>
   <div class="highlight">
-    <strong>Responsable del tratamiento:</strong> ACCIO FREIGHT SAC<br>
-    <strong>Domicilio:</strong> Lima, Perú<br>
-    <strong>Correo electrónico:</strong> pirrazabal@acciofreight.com<br>
-    <strong>Teléfono / WhatsApp:</strong> +51 922 458 136<br>
-    <strong>Oficial de Datos Personales:</strong> Patricia Pilar Irrazabal Muñoz
+    <strong data-i18n="privacy.s1.lResponsible">Responsable del tratamiento:</strong> ACCIO FREIGHT SAC<br>
+    <strong data-i18n="privacy.s1.lAddress">Domicilio:</strong> <span data-i18n="privacy.s1.vAddress">Lima, Perú</span><br>
+    <strong data-i18n="privacy.s1.lEmail">Correo electrónico:</strong> pirrazabal@acciofreight.com<br>
+    <strong data-i18n="privacy.s1.lPhone">Teléfono / WhatsApp:</strong> +51 922 458 136<br>
+    <strong data-i18n="privacy.s1.lOfficer">Oficial de Datos Personales:</strong> Patricia Pilar Irrazabal Muñoz
   </div>
 
-  <h2 id="pp-2">2. Datos personales que recopilamos</h2>
-  <p>En el marco de nuestra actividad comercial y operativa, podemos recopilar las siguientes categorías de datos personales:</p>
+  <h2 id="pp-2" data-i18n="privacy.s2.title">2. Datos personales que recopilamos</h2>
+  <p data-i18n="privacy.s2.p1">En el marco de nuestra actividad comercial y operativa, podemos recopilar las siguientes categorías de datos personales:</p>
   <div class="table-scroll">
   <table>
     <thead>
-      <tr><th scope="col">Categoría</th><th scope="col">Datos específicos</th><th scope="col">Fuente</th></tr>
+      <tr><th scope="col" data-i18n="privacy.s2.th1">Categoría</th><th scope="col" data-i18n="privacy.s2.th2">Datos específicos</th><th scope="col" data-i18n="privacy.s2.th3">Fuente</th></tr>
     </thead>
     <tbody>
-      <tr><td>Identificación</td><td>Nombre completo, empresa, cargo</td><td>Formulario web, correo electrónico</td></tr>
-      <tr><td>Contacto</td><td>Correo electrónico, teléfono / WhatsApp</td><td>Formulario web, comunicación directa</td></tr>
-      <tr><td>Operativa</td><td>Nombre de nave, tipo de carga, ruta, documentación de embarque</td><td>Comunicación comercial, formulario</td></tr>
-      <tr><td>Datos técnicos</td><td>Información que el navegador envía al cargar la página o recursos externos, cuando corresponda</td><td>Proveedores tecnológicos</td></tr>
+      <tr><td data-i18n="privacy.s2.r1c1">Identificación</td><td data-i18n="privacy.s2.r1c2">Nombre completo, empresa, cargo</td><td data-i18n="privacy.s2.r1c3">Formulario web, correo electrónico</td></tr>
+      <tr><td data-i18n="privacy.s2.r2c1">Contacto</td><td data-i18n="privacy.s2.r2c2">Correo electrónico, teléfono / WhatsApp</td><td data-i18n="privacy.s2.r2c3">Formulario web, comunicación directa</td></tr>
+      <tr><td data-i18n="privacy.s2.r3c1">Operativa</td><td data-i18n="privacy.s2.r3c2">Nombre de nave, tipo de carga, ruta, documentación de embarque</td><td data-i18n="privacy.s2.r3c3">Comunicación comercial, formulario</td></tr>
+      <tr><td data-i18n="privacy.s2.r4c1">Datos técnicos</td><td data-i18n="privacy.s2.r4c2">Información que el navegador envía al cargar la página o recursos externos, cuando corresponda</td><td data-i18n="privacy.s2.r4c3">Proveedores tecnológicos</td></tr>
     </tbody>
   </table>
   </div>
-  <p>No recopilamos datos sensibles (salud, biometría, filiación política, religión, etc.).</p>
+  <p data-i18n="privacy.s2.p2">No recopilamos datos sensibles (salud, biometría, filiación política, religión, etc.).</p>
 
-  <h2 id="pp-3">3. Finalidades del tratamiento</h2>
-  <p>Sus datos personales serán utilizados exclusivamente para las siguientes finalidades:</p>
+  <h2 id="pp-3" data-i18n="privacy.s3.title">3. Finalidades del tratamiento</h2>
+  <p data-i18n="privacy.s3.p1">Sus datos personales serán utilizados exclusivamente para las siguientes finalidades:</p>
   <ul>
-    <li><strong>Gestión comercial:</strong> Responder consultas, enviar cotizaciones y dar seguimiento a solicitudes de servicio.</li>
-    <li><strong>Prestación de servicios:</strong> Coordinar y ejecutar los servicios de agenciamiento marítimo contratados.</li>
-    <li><strong>Comunicación:</strong> Enviar información relevante sobre el estado de operaciones, actualizaciones de servicio y comunicaciones comerciales.</li>
-    <li><strong>Cumplimiento legal:</strong> Atender obligaciones regulatorias, fiscales y aduaneras aplicables.</li>
-    <li><strong>Preferencias del sitio:</strong> Recordar el idioma elegido mediante el almacenamiento local del navegador.</li>
+    <li><strong data-i18n="privacy.s3.l1">Gestión comercial:</strong> <span data-i18n="privacy.s3.v1">Responder consultas, enviar cotizaciones y dar seguimiento a solicitudes de servicio.</span></li>
+    <li><strong data-i18n="privacy.s3.l2">Prestación de servicios:</strong> <span data-i18n="privacy.s3.v2">Coordinar y ejecutar los servicios de agenciamiento marítimo contratados.</span></li>
+    <li><strong data-i18n="privacy.s3.l3">Comunicación:</strong> <span data-i18n="privacy.s3.v3">Enviar información relevante sobre el estado de operaciones, actualizaciones de servicio y comunicaciones comerciales.</span></li>
+    <li><strong data-i18n="privacy.s3.l4">Cumplimiento legal:</strong> <span data-i18n="privacy.s3.v4">Atender obligaciones regulatorias, fiscales y aduaneras aplicables.</span></li>
+    <li><strong data-i18n="privacy.s3.l5">Preferencias del sitio:</strong> <span data-i18n="privacy.s3.v5">Recordar el idioma elegido mediante el almacenamiento local del navegador.</span></li>
   </ul>
 
-  <h2 id="pp-4">4. Base legal del tratamiento</h2>
-  <p>El tratamiento de sus datos se sustenta en:</p>
+  <h2 id="pp-4" data-i18n="privacy.s4.title">4. Base legal del tratamiento</h2>
+  <p data-i18n="privacy.s4.p1">El tratamiento de sus datos se sustenta en:</p>
   <ul>
-    <li><strong>Consentimiento:</strong> Al enviar el formulario de contacto, usted acepta expresamente el tratamiento de sus datos para las finalidades descritas.</li>
-    <li><strong>Ejecución de contrato:</strong> Cuando los datos son necesarios para prestar el servicio de agenciamiento contratado.</li>
-    <li><strong>Interés legítimo:</strong> Para el envío de comunicaciones comerciales relacionadas con nuestros servicios, siempre que no prevalezcan sus derechos.</li>
-    <li><strong>Obligación legal:</strong> Cuando el tratamiento es requerido por normativa peruana (SUNAT, autoridades portuarias, etc.).</li>
+    <li><strong data-i18n="privacy.s4.l1">Consentimiento:</strong> <span data-i18n="privacy.s4.v1">Al enviar el formulario de contacto, usted acepta expresamente el tratamiento de sus datos para las finalidades descritas.</span></li>
+    <li><strong data-i18n="privacy.s4.l2">Ejecución de contrato:</strong> <span data-i18n="privacy.s4.v2">Cuando los datos son necesarios para prestar el servicio de agenciamiento contratado.</span></li>
+    <li><strong data-i18n="privacy.s4.l3">Interés legítimo:</strong> <span data-i18n="privacy.s4.v3">Para el envío de comunicaciones comerciales relacionadas con nuestros servicios, siempre que no prevalezcan sus derechos.</span></li>
+    <li><strong data-i18n="privacy.s4.l4">Obligación legal:</strong> <span data-i18n="privacy.s4.v4">Cuando el tratamiento es requerido por normativa peruana (SUNAT, autoridades portuarias, etc.).</span></li>
   </ul>
 
-  <h2 id="pp-5">5. Compartición de datos con terceros</h2>
-  <p>ACCIO FREIGHT puede compartir sus datos personales con las siguientes categorías de terceros, únicamente para las finalidades descritas:</p>
+  <h2 id="pp-5" data-i18n="privacy.s5.title">5. Compartición de datos con terceros</h2>
+  <p data-i18n="privacy.s5.p1">ACCIO FREIGHT puede compartir sus datos personales con las siguientes categorías de terceros, únicamente para las finalidades descritas:</p>
   <div class="table-scroll">
   <table>
     <thead>
-      <tr><th scope="col">Destinatario</th><th scope="col">Finalidad</th><th scope="col">Ubicación</th></tr>
+      <tr><th scope="col" data-i18n="privacy.s5.th1">Destinatario</th><th scope="col" data-i18n="privacy.s5.th2">Finalidad</th><th scope="col" data-i18n="privacy.s5.th3">Ubicación</th></tr>
     </thead>
     <tbody>
-      <tr><td>Navieras (ONE, MSC, COSCO, CMA, etc.)</td><td>Gestión de bookings, documentación de embarque</td><td>Internacional</td></tr>
-      <tr><td>Autoridades portuarias y aduaneras (SUNAT)</td><td>Cumplimiento de obligaciones regulatorias</td><td>Perú</td></tr>
-      <tr><td>Proveedores de servicios tecnológicos</td><td>Hosting, mapas, fuentes, correo electrónico y formularios</td><td>Internacional</td></tr>
-      <tr><td>Operadores de pago</td><td>Procesamiento de facturación (cuando aplique)</td><td>Internacional</td></tr>
+      <tr><td>Navieras (ONE, MSC, COSCO, CMA, etc.)</td><td data-i18n="privacy.s5.r1c2">Gestión de bookings, documentación de embarque</td><td data-i18n="privacy.s5.r1c3">Internacional</td></tr>
+      <tr><td data-i18n="privacy.s5.r2c1">Autoridades portuarias y aduaneras (SUNAT)</td><td data-i18n="privacy.s5.r2c2">Cumplimiento de obligaciones regulatorias</td><td data-i18n="privacy.s5.r2c3">Perú</td></tr>
+      <tr><td data-i18n="privacy.s5.r3c1">Proveedores de servicios tecnológicos</td><td data-i18n="privacy.s5.r3c2">Hosting, mapas, fuentes, correo electrónico y formularios</td><td data-i18n="privacy.s5.r3c3">Internacional</td></tr>
+      <tr><td data-i18n="privacy.s5.r4c1">Operadores de pago</td><td data-i18n="privacy.s5.r4c2">Procesamiento de facturación (cuando aplique)</td><td data-i18n="privacy.s5.r4c3">Internacional</td></tr>
     </tbody>
   </table>
   </div>
-  <p>No vendemos ni compartimos sus datos personales con terceros para fines de marketing directo.</p>
+  <p data-i18n="privacy.s5.p2">No vendemos ni compartimos sus datos personales con terceros para fines de marketing directo.</p>
 
-  <h2 id="pp-6">6. Transferencias internacionales de datos</h2>
-  <p>Sus datos pueden ser transferidos y almacenados en servidores ubicados fuera del Perú, incluyendo Estados Unidos y la Unión Europea, cuando se utilizan servicios de tecnologías de la información (por ejemplo, Google Maps, Google Fonts, FormSubmit.co y proveedores de hosting).</p>
-  <p>Cuando se realizan transferencias internacionales, adoptamos las siguientes garantías:</p>
+  <h2 id="pp-6" data-i18n="privacy.s6.title">6. Transferencias internacionales de datos</h2>
+  <p data-i18n="privacy.s6.p1">Sus datos pueden ser transferidos y almacenados en servidores ubicados fuera del Perú, incluyendo Estados Unidos y la Unión Europea, cuando se utilizan servicios de tecnologías de la información (por ejemplo, Google Maps, Google Fonts, FormSubmit.co y proveedores de hosting).</p>
+  <p data-i18n="privacy.s6.p2">Cuando se realizan transferencias internacionales, adoptamos las siguientes garantías:</p>
   <ul>
-    <li>Cláusulas contractuales estándar (GDPR) con los proveedores.</li>
-    <li>Evaluación de adecuación del nivel de protección del país destino.</li>
-    <li>Medidas técnicas y organizativas de seguridad (cifrado, anonimización).</li>
+    <li data-i18n="privacy.s6.l1">Cláusulas contractuales estándar (GDPR) con los proveedores.</li>
+    <li data-i18n="privacy.s6.l2">Evaluación de adecuación del nivel de protección del país destino.</li>
+    <li data-i18n="privacy.s6.l3">Medidas técnicas y organizativas de seguridad (cifrado, anonimización).</li>
   </ul>
 
-  <h2 id="pp-7">7. Cookies y tecnologías de rastreo</h2>
-  <p>Este sitio no incorpora actualmente una herramienta propia de analítica web ni el script de Google Analytics. Puede utilizar tecnologías de almacenamiento y servicios externos para:</p>
+  <h2 id="pp-7" data-i18n="privacy.s7.title">7. Cookies y tecnologías de rastreo</h2>
+  <p data-i18n="privacy.s7.p1">Este sitio no incorpora actualmente una herramienta propia de analítica web ni el script de Google Analytics. Puede utilizar tecnologías de almacenamiento y servicios externos para:</p>
   <ul>
-    <li><strong>Preferencia de idioma:</strong> Recordar la configuración ES/EN mediante el almacenamiento local del navegador.</li>
-    <li><strong>Servicios externos:</strong> Mostrar el mapa de ubicación, cargar fuentes y procesar solicitudes de contacto. Estos proveedores pueden recibir datos técnicos conforme a sus propias políticas.</li>
+    <li><strong data-i18n="privacy.s7.l1">Preferencia de idioma:</strong> <span data-i18n="privacy.s7.v1">Recordar la configuración ES/EN mediante el almacenamiento local del navegador.</span></li>
+    <li><strong data-i18n="privacy.s7.l2">Servicios externos:</strong> <span data-i18n="privacy.s7.v2">Mostrar el mapa de ubicación, cargar fuentes y procesar solicitudes de contacto. Estos proveedores pueden recibir datos técnicos conforme a sus propias políticas.</span></li>
   </ul>
-  <p>Puede borrar el almacenamiento local desde la configuración de su navegador. Para conocer el tratamiento realizado por los servicios externos, consulte sus respectivas políticas de privacidad.</p>
+  <p data-i18n="privacy.s7.p2">Puede borrar el almacenamiento local desde la configuración de su navegador. Para conocer el tratamiento realizado por los servicios externos, consulte sus respectivas políticas de privacidad.</p>
 
-  <h2 id="pp-8">8. Conservación de datos</h2>
-  <p>Sus datos personales serán conservados por los siguientes plazos:</p>
+  <h2 id="pp-8" data-i18n="privacy.s8.title">8. Conservación de datos</h2>
+  <p data-i18n="privacy.s8.p1">Sus datos personales serán conservados por los siguientes plazos:</p>
   <div class="table-scroll">
   <table>
     <thead>
-      <tr><th scope="col">Tipo de dato</th><th scope="col">Plazo de conservación</th></tr>
+      <tr><th scope="col" data-i18n="privacy.s8.th1">Tipo de dato</th><th scope="col" data-i18n="privacy.s8.th2">Plazo de conservación</th></tr>
     </thead>
     <tbody>
-      <tr><td>Datos de contacto (formulario)</td><td>Hasta 24 meses después del último contacto</td></tr>
-      <tr><td>Datos operativos (embarques)</td><td>5 años (obligación fiscal y aduanera)</td></tr>
-      <tr><td>Preferencia de idioma (almacenamiento local)</td><td>Mientras permanezca guardada en el navegador</td></tr>
-      <tr><td>Registros de facturación</td><td>7 años (obligación tributaria)</td></tr>
+      <tr><td data-i18n="privacy.s8.r1c1">Datos de contacto (formulario)</td><td data-i18n="privacy.s8.r1c2">Hasta 24 meses después del último contacto</td></tr>
+      <tr><td data-i18n="privacy.s8.r2c1">Datos operativos (embarques)</td><td data-i18n="privacy.s8.r2c2">5 años (obligación fiscal y aduanera)</td></tr>
+      <tr><td data-i18n="privacy.s8.r3c1">Preferencia de idioma (almacenamiento local)</td><td data-i18n="privacy.s8.r3c2">Mientras permanezca guardada en el navegador</td></tr>
+      <tr><td data-i18n="privacy.s8.r4c1">Registros de facturación</td><td data-i18n="privacy.s8.r4c2">7 años (obligación tributaria)</td></tr>
     </tbody>
   </table>
   </div>
 
-  <h2 id="pp-9">9. Medidas de seguridad</h2>
-  <p>ACCIO FREIGHT ha implementado medidas técnicas, organizativas y legales para proteger sus datos personales contra acceso no autorizado, alteración, divulgación o destrucción, incluyendo:</p>
+  <h2 id="pp-9" data-i18n="privacy.s9.title">9. Medidas de seguridad</h2>
+  <p data-i18n="privacy.s9.p1">ACCIO FREIGHT ha implementado medidas técnicas, organizativas y legales para proteger sus datos personales contra acceso no autorizado, alteración, divulgación o destrucción, incluyendo:</p>
   <ul>
-    <li>Cifrado de datos en tránsito (HTTPS/TLS).</li>
-    <li>Acceso restringido a datos personales según principio de mínimo privilegio.</li>
-    <li>Política de confidencialidad para empleados y contratistas.</li>
-    <li>Procedimientos de respuesta ante incidentes de seguridad.</li>
-    <li>Respaldo periódico de información crítica.</li>
+    <li data-i18n="privacy.s9.l1">Cifrado de datos en tránsito (HTTPS/TLS).</li>
+    <li data-i18n="privacy.s9.l2">Acceso restringido a datos personales según principio de mínimo privilegio.</li>
+    <li data-i18n="privacy.s9.l3">Política de confidencialidad para empleados y contratistas.</li>
+    <li data-i18n="privacy.s9.l4">Procedimientos de respuesta ante incidentes de seguridad.</li>
+    <li data-i18n="privacy.s9.l5">Respaldo periódico de información crítica.</li>
   </ul>
-  <p>En caso de incidente de seguridad que afecte sus datos, seremos notificados dentro de las 48 horas ante la Autoridad Nacional de Protección de Datos Personales (ANPDP) y le informaremos si el incidente le afecta directamente.</p>
+  <p data-i18n="privacy.s9.p2">En caso de incidente de seguridad que afecte sus datos, seremos notificados dentro de las 48 horas ante la Autoridad Nacional de Protección de Datos Personales (ANPDP) y le informaremos si el incidente le afecta directamente.</p>
 
-  <h2 id="pp-10">10. Derechos del titular</h2>
-  <p>Usted tiene derecho a ejercer los siguientes derechos sobre sus datos personales:</p>
+  <h2 id="pp-10" data-i18n="privacy.s10.title">10. Derechos del titular</h2>
+  <p data-i18n="privacy.s10.p1">Usted tiene derecho a ejercer los siguientes derechos sobre sus datos personales:</p>
   <div class="highlight">
-    <strong>Derechos ARCO (Perú):</strong><br>
-    <strong>A</strong>cceso — Conocer qué datos tenemos sobre usted.<br>
-    <strong>R</strong>ectificación — Corregir datos inexactos o incompletos.<br>
-    <strong>C</strong>ancelación — Solicitar la eliminación de sus datos cuando ya no sean necesarios.<br>
-    <strong>O</strong>posición — Oponerse al tratamiento de sus datos para fines específicos.
+    <strong data-i18n="privacy.s10.arcoTitle">Derechos ARCO (Perú):</strong><br>
+    <span data-i18n-html="privacy.s10.access"><strong>A</strong>cceso — Conocer qué datos tenemos sobre usted.</span><br>
+    <span data-i18n-html="privacy.s10.rectification"><strong>R</strong>ectificación — Corregir datos inexactos o incompletos.</span><br>
+    <span data-i18n-html="privacy.s10.cancellation"><strong>C</strong>ancelación — Solicitar la eliminación de sus datos cuando ya no sean necesarios.</span><br>
+    <span data-i18n-html="privacy.s10.opposition"><strong>O</strong>posición — Oponerse al tratamiento de sus datos para fines específicos.</span>
   </div>
-  <p>Además, conforme a normativas internacionales (GDPR, CCPA/CPRA, PIPL), usted tiene derecho a:</p>
+  <p data-i18n="privacy.s10.p2">Además, conforme a normativas internacionales (GDPR, CCPA/CPRA, PIPL), usted tiene derecho a:</p>
   <ul>
-    <li><strong>Portabilidad:</strong> Recibir sus datos en un formato estructurado y de uso común.</li>
-    <li><strong>Limitación del tratamiento:</strong> Solicitar que restrinjamos el uso de sus datos.</li>
-    <li><strong>Revocación del consentimiento:</strong> Retirar su consentimiento en cualquier momento.</li>
-    <li><strong>No discriminación:</strong> No ser discriminado por ejercer sus derechos de privacidad.</li>
-    <li><strong>Reclamo ante autoridad:</strong> Presentar queja ante la ANPDP (Perú), la AEPD (España) o la autoridad competente en su jurisdicción.</li>
+    <li><strong data-i18n="privacy.s10.l1">Portabilidad:</strong> <span data-i18n="privacy.s10.v1">Recibir sus datos en un formato estructurado y de uso común.</span></li>
+    <li><strong data-i18n="privacy.s10.l2">Limitación del tratamiento:</strong> <span data-i18n="privacy.s10.v2">Solicitar que restrinjamos el uso de sus datos.</span></li>
+    <li><strong data-i18n="privacy.s10.l3">Revocación del consentimiento:</strong> <span data-i18n="privacy.s10.v3">Retirar su consentimiento en cualquier momento.</span></li>
+    <li><strong data-i18n="privacy.s10.l4">No discriminación:</strong> <span data-i18n="privacy.s10.v4">No ser discriminado por ejercer sus derechos de privacidad.</span></li>
+    <li><strong data-i18n="privacy.s10.l5">Reclamo ante autoridad:</strong> <span data-i18n="privacy.s10.v5">Presentar queja ante la ANPDP (Perú), la AEPD (España) o la autoridad competente en su jurisdicción.</span></li>
   </ul>
-  <p>Para ejercer estos derechos, contáctenos a través de los medios indicados en la sección 13.</p>
+  <p data-i18n="privacy.s10.p3">Para ejercer estos derechos, contáctenos a través de los medios indicados en la sección 13.</p>
 
-  <h2 id="pp-11">11. Menores de edad</h2>
-  <p>Nuestros servicios están dirigidos a personas mayores de 18 años y a empresas. No recopilamos intencionalmente datos personales de menores de edad. Si usted es padre/madre o tutor y cree que su hijo nos ha proporcionado datos personales, contáctenos para eliminarlos.</p>
+  <h2 id="pp-11" data-i18n="privacy.s11.title">11. Menores de edad</h2>
+  <p data-i18n="privacy.s11.p1">Nuestros servicios están dirigidos a personas mayores de 18 años y a empresas. No recopilamos intencionalmente datos personales de menores de edad. Si usted es padre/madre o tutor y cree que su hijo nos ha proporcionado datos personales, contáctenos para eliminarlos.</p>
 
-  <h2 id="pp-12">12. Cambios en esta política</h2>
-  <p>ACCIO FREIGHT se reserva el derecho de modificar esta Política de Privacidad en cualquier momento. Los cambios serán publicados en esta página con la fecha de última actualización. Le recomendamos revisar periódicamente este documento.</p>
+  <h2 id="pp-12" data-i18n="privacy.s12.title">12. Cambios en esta política</h2>
+  <p data-i18n="privacy.s12.p1">ACCIO FREIGHT se reserva el derecho de modificar esta Política de Privacidad en cualquier momento. Los cambios serán publicados en esta página con la fecha de última actualización. Le recomendamos revisar periódicamente este documento.</p>
 
-  <h2 id="pp-13">13. Contacto y ejercicio de derechos</h2>
-  <p>Para ejercer sus derechos ARCO, realizar consultas o presentar reclamos sobre el tratamiento de sus datos personales, puede contactarnos a través de:</p>
+  <h2 id="pp-13" data-i18n="privacy.s13.title">13. Contacto y ejercicio de derechos</h2>
+  <p data-i18n="privacy.s13.p1">Para ejercer sus derechos ARCO, realizar consultas o presentar reclamos sobre el tratamiento de sus datos personales, puede contactarnos a través de:</p>
   <div class="highlight">
-    <strong>Correo electrónico:</strong> pirrazabal@acciofreight.com<br>
-    <strong>WhatsApp:</strong> +51 922 458 136<br>
-    <strong>Horario de atención:</strong> Lunes a Viernes, 8:30 am — 6:00 pm (hora de Perú)<br><br>
-    <strong>Plazo de respuesta:</strong> Atenderemos su solicitud dentro de los plazos establecidos por la Ley 29733 (máximo 20 días hábiles).<br><br>
-    <strong>Autoridad de control:</strong><br>
-    Autoridad Nacional de Protección de Datos Personales (ANPDP)<br>
+    <strong data-i18n="privacy.s13.lEmail">Correo electrónico:</strong> pirrazabal@acciofreight.com<br>
+    <strong data-i18n="privacy.s13.lWhatsapp">WhatsApp:</strong> +51 922 458 136<br>
+    <strong data-i18n="privacy.s13.lHours">Horario de atención:</strong> <span data-i18n="privacy.s13.vHours">Lunes a Viernes, 8:30 am — 6:00 pm (hora de Perú)</span><br><br>
+    <strong data-i18n="privacy.s13.lDeadline">Plazo de respuesta:</strong> <span data-i18n="privacy.s13.vDeadline">Atenderemos su solicitud dentro de los plazos establecidos por la Ley 29733 (máximo 20 días hábiles).</span><br><br>
+    <strong data-i18n="privacy.s13.lAuthority">Autoridad de control:</strong><br>
+    <span data-i18n="privacy.s13.vAuthority">Autoridad Nacional de Protección de Datos Personales (ANPDP)</span><br>
     <a href="https://www.gob.pe/anpd" target="_blank" rel="noopener">www.gob.pe/anpd</a>
   </div>
 </div>
@@ -576,114 +239,114 @@
 <div class="legal-section" id="terminos" role="tabpanel" aria-labelledby="termsTab" tabindex="-1" hidden>
 
   <div class="toc reveal-up">
-    <h4>Contenido</h4>
+    <h4 data-i18n="terms.toc.title">Contenido</h4>
     <ol>
-      <li><a href="#tc-1">Identificación del prestador</a></li>
-      <li><a href="#tc-2">Objeto</a></li>
-      <li><a href="#tc-3">Alcance del sitio web</a></li>
-      <li><a href="#tc-4">Servicios ofrecidos</a></li>
-      <li><a href="#tc-5">Cotizaciones y contratación</a></li>
-      <li><a href="#tc-6">Propiedad intelectual</a></li>
-      <li><a href="#tc-7">Responsabilidad</a></li>
-      <li><a href="#tc-8">Enlaces a sitios de terceros</a></li>
-      <li><a href="#tc-9">Uso aceptable</a></li>
-      <li><a href="#tc-10">Fuerza mayor</a></li>
-      <li><a href="#tc-11">Confidencialidad</a></li>
-      <li><a href="#tc-12">Modificaciones</a></li>
-      <li><a href="#tc-13">Ley aplicable y jurisdicción</a></li>
-      <li><a href="#tc-14">Contacto</a></li>
+      <li><a href="#tc-1" data-i18n="terms.toc.i1">Identificación del prestador</a></li>
+      <li><a href="#tc-2" data-i18n="terms.toc.i2">Objeto</a></li>
+      <li><a href="#tc-3" data-i18n="terms.toc.i3">Alcance del sitio web</a></li>
+      <li><a href="#tc-4" data-i18n="terms.toc.i4">Servicios ofrecidos</a></li>
+      <li><a href="#tc-5" data-i18n="terms.toc.i5">Cotizaciones y contratación</a></li>
+      <li><a href="#tc-6" data-i18n="terms.toc.i6">Propiedad intelectual</a></li>
+      <li><a href="#tc-7" data-i18n="terms.toc.i7">Responsabilidad</a></li>
+      <li><a href="#tc-8" data-i18n="terms.toc.i8">Enlaces a sitios de terceros</a></li>
+      <li><a href="#tc-9" data-i18n="terms.toc.i9">Uso aceptable</a></li>
+      <li><a href="#tc-10" data-i18n="terms.toc.i10">Fuerza mayor</a></li>
+      <li><a href="#tc-11" data-i18n="terms.toc.i11">Confidencialidad</a></li>
+      <li><a href="#tc-12" data-i18n="terms.toc.i12">Modificaciones</a></li>
+      <li><a href="#tc-13" data-i18n="terms.toc.i13">Ley aplicable y jurisdicción</a></li>
+      <li><a href="#tc-14" data-i18n="terms.toc.i14">Contacto</a></li>
     </ol>
   </div>
 
-  <h2 id="tc-1">1. Identificación del prestador</h2>
+  <h2 id="tc-1" data-i18n="terms.s1.title">1. Identificación del prestador</h2>
   <div class="highlight">
-    <strong>Razón social:</strong> ACCIO FREIGHT SAC<br>
-    <strong>Domicilio:</strong> Lima, Perú<br>
-    <strong>Correo:</strong> pirrazabal@acciofreight.com<br>
-    <strong>Teléfono:</strong> +51 922 458 136
+    <strong data-i18n="terms.s1.lCompany">Razón social:</strong> ACCIO FREIGHT SAC<br>
+    <strong data-i18n="terms.s1.lAddress">Domicilio:</strong> <span data-i18n="terms.s1.vAddress">Lima, Perú</span><br>
+    <strong data-i18n="terms.s1.lEmail">Correo:</strong> pirrazabal@acciofreight.com<br>
+    <strong data-i18n="terms.s1.lPhone">Teléfono:</strong> +51 922 458 136
   </div>
 
-  <h2 id="tc-2">2. Objeto</h2>
-  <p>Los presentes Términos y Condiciones regulan el uso del sitio web de ACCIO FREIGHT SAC (en adelante, "el Sitio") y los servicios de agenciamiento marítimo ofrecidos a través del mismo. Al acceder o utilizar el Sitio, usted acepta íntegramente estos Términos.</p>
+  <h2 id="tc-2" data-i18n="terms.s2.title">2. Objeto</h2>
+  <p data-i18n="terms.s2.p1">Los presentes Términos y Condiciones regulan el uso del sitio web de ACCIO FREIGHT SAC (en adelante, "el Sitio") y los servicios de agenciamiento marítimo ofrecidos a través del mismo. Al acceder o utilizar el Sitio, usted acepta íntegramente estos Términos.</p>
 
-  <h2 id="tc-3">3. Alcance del sitio web</h2>
-  <p>El Sitio tiene carácter <strong>informativo y comercial</strong>. Su objetivo es:</p>
+  <h2 id="tc-3" data-i18n="terms.s3.title">3. Alcance del sitio web</h2>
+  <p data-i18n-html="terms.s3.p1">El Sitio tiene carácter <strong>informativo y comercial</strong>. Su objetivo es:</p>
   <ul>
-    <li>Describir los servicios de agenciamiento marítimo de ACCIO FREIGHT.</li>
-    <li>Facilitar canales de contacto para solicitar información o cotizaciones.</li>
-    <li>Proporcionar documentación legal vigente (Política de Privacidad, Términos y Condiciones).</li>
+    <li data-i18n="terms.s3.l1">Describir los servicios de agenciamiento marítimo de ACCIO FREIGHT.</li>
+    <li data-i18n="terms.s3.l2">Facilitar canales de contacto para solicitar información o cotizaciones.</li>
+    <li data-i18n="terms.s3.l3">Proporcionar documentación legal vigente (Política de Privacidad, Términos y Condiciones).</li>
   </ul>
-  <p>El Sitio <strong>no constituye</strong> una oferta vinculante de servicios. La contratación efectiva se formaliza mediante la aceptación expresa de una cotización y la firma de un contrato o confirmación de pedido.</p>
+  <p data-i18n-html="terms.s3.p2">El Sitio <strong>no constituye</strong> una oferta vinculante de servicios. La contratación efectiva se formaliza mediante la aceptación expresa de una cotización y la firma de un contrato o confirmación de pedido.</p>
 
-  <h2 id="tc-4">4. Servicios ofrecidos</h2>
-  <p>ACCIO FREIGHT ofrece servicios de agenciamiento marítimo que incluyen, entre otros:</p>
+  <h2 id="tc-4" data-i18n="terms.s4.title">4. Servicios ofrecidos</h2>
+  <p data-i18n="terms.s4.p1">ACCIO FREIGHT ofrece servicios de agenciamiento marítimo que incluyen, entre otros:</p>
   <ul>
-    <li><strong>Gestión documental:</strong> Manifiesto de carga, petitorio de zarpe, declaración de mercancía, lista de tripulantes, certificado de arqueo, sanidad marítima, known shipper.</li>
-    <li><strong>Coordinación de embarques:</strong> Booking con navieras, preparación documental (VGM, HBL/MBL), seguimiento en tránsito, arribo y liberación de carga.</li>
-    <li><strong>Seguro de carga:</strong> Gestión de coberturas para mercancías en tránsito marítimo, aéreo o terrestre.</li>
-    <li><strong>Rutas y navieras:</strong> Coordinación con ONE, MSC, COSCO, CMA y otras navieras en rutas Asia-Europa-Norteamérica-Perú.</li>
+    <li><strong data-i18n="terms.s4.l1">Gestión documental:</strong> <span data-i18n="terms.s4.v1">Manifiesto de carga, petitorio de zarpe, declaración de mercancía, lista de tripulantes, certificado de arqueo, sanidad marítima, known shipper.</span></li>
+    <li><strong data-i18n="terms.s4.l2">Coordinación de embarques:</strong> <span data-i18n="terms.s4.v2">Booking con navieras, preparación documental (VGM, HBL/MBL), seguimiento en tránsito, arribo y liberación de carga.</span></li>
+    <li><strong data-i18n="terms.s4.l3">Seguro de carga:</strong> <span data-i18n="terms.s4.v3">Gestión de coberturas para mercancías en tránsito marítimo, aéreo o terrestre.</span></li>
+    <li><strong data-i18n="terms.s4.l4">Rutas y navieras:</strong> <span data-i18n="terms.s4.v4">Coordinación con ONE, MSC, COSCO, CMA y otras navieras en rutas Asia-Europa-Norteamérica-Perú.</span></li>
   </ul>
-  <p>Las condiciones específicas de cada servicio se establecen en la cotización y/o contrato correspondiente.</p>
+  <p data-i18n="terms.s4.p2">Las condiciones específicas de cada servicio se establecen en la cotización y/o contrato correspondiente.</p>
 
-  <h2 id="tc-5">5. Cotizaciones y contratación</h2>
+  <h2 id="tc-5" data-i18n="terms.s5.title">5. Cotizaciones y contratación</h2>
   <ul>
-    <li>Las cotizaciones tienen una <strong>validez de 15 días hábiles</strong> desde su emisión, salvo indicación contraria.</li>
-    <li>Las cotizaciones son <strong>no vinculantes</strong> hasta su aceptación expresa por el cliente y la confirmación de ACCIO FREIGHT.</li>
-    <li>Los precios pueden variar según condiciones del mercado, disponibilidad de espacio en navieras y regulaciones vigentes.</li>
-    <li>La contratación efectiva queda sujeta a la verificación de documentación requerida y aprobación crediticia (cuando aplique).</li>
-    <li>El pago se realizará conforme a las condiciones establecidas en la cotización o contrato.</li>
-  </ul>
-
-  <h2 id="tc-6">6. Propiedad intelectual</h2>
-  <p>Todo el contenido del Sitio, incluyendo pero no limitándose a textos, gráficos, logotipos, iconos, imágenes, diseños, código fuente y software, es propiedad de ACCIO FREIGHT SAC o de sus proveedores de contenido y está protegido por las leyes de propiedad intelectual de Perú y tratados internacionales.</p>
-  <p>Queda prohibido:</p>
-  <ul>
-    <li>Copiar, reproducir, distribuir o modificar el contenido del Sitio sin autorización previa por escrito.</li>
-    <li>Usar el contenido para fines comerciales no autorizados.</li>
-    <li>Utilizar marcas, logotipos o nombre comercial de ACCIO FREIGHT sin autorización.</li>
+    <li data-i18n-html="terms.s5.l1">Las cotizaciones tienen una <strong>validez de 15 días hábiles</strong> desde su emisión, salvo indicación contraria.</li>
+    <li data-i18n-html="terms.s5.l2">Las cotizaciones son <strong>no vinculantes</strong> hasta su aceptación expresa por el cliente y la confirmación de ACCIO FREIGHT.</li>
+    <li data-i18n="terms.s5.l3">Los precios pueden variar según condiciones del mercado, disponibilidad de espacio en navieras y regulaciones vigentes.</li>
+    <li data-i18n="terms.s5.l4">La contratación efectiva queda sujeta a la verificación de documentación requerida y aprobación crediticia (cuando aplique).</li>
+    <li data-i18n="terms.s5.l5">El pago se realizará conforme a las condiciones establecidas en la cotización o contrato.</li>
   </ul>
 
-  <h2 id="tc-7">7. Responsabilidad</h2>
-  <p><strong>ACCIO FREIGHT</strong> se compromete a prestar los servicios con la debida diligencia y profesionalismo. Sin embargo:</p>
+  <h2 id="tc-6" data-i18n="terms.s6.title">6. Propiedad intelectual</h2>
+  <p data-i18n="terms.s6.p1">Todo el contenido del Sitio, incluyendo pero no limitándose a textos, gráficos, logotipos, iconos, imágenes, diseños, código fuente y software, es propiedad de ACCIO FREIGHT SAC o de sus proveedores de contenido y está protegido por las leyes de propiedad intelectual de Perú y tratados internacionales.</p>
+  <p data-i18n="terms.s6.p2">Queda prohibido:</p>
   <ul>
-    <li>No se responsabiliza por <strong>demoras, cancelaciones o incidencias</strong> causadas por navieras, autoridades portuarias, aduaneras o fuerza mayor.</li>
-    <li>No garantiza la disponibilidad ininterrumpida del Sitio ni se responsabiliza por errores u omisiones en su contenido.</li>
-    <li>La información publicada en el Sitio es de carácter general y no constituye asesoría legal, aduanera o de seguros.</li>
-    <li>El uso de la información del Sitio es responsabilidad exclusiva del usuario.</li>
-  </ul>
-  <p>En ningún caso ACCIO FREIGHT será responsable por daños indirectos, pérdida de beneficios, pérdida de datos o cualquier daño consecuente derivado del uso del Sitio o de los servicios contratados.</p>
-
-  <h2 id="tc-8">8. Enlaces a sitios de terceros</h2>
-  <p>El Sitio puede contener enlaces a sitios web de terceros (ej: Google Maps, WhatsApp, redes sociales de navieras). Estos enlaces se proporcionan solo como referencia. ACCIO FREIGHT no controla ni se responsabiliza por el contenido, políticas de privacidad o prácticas de dichos sitios de terceros.</p>
-
-  <h2 id="tc-9">9. Uso aceptable</h2>
-  <p>Al utilizar el Sitio, usted se compromete a:</p>
-  <ul>
-    <li>No utilizar el Sitio para fines ilícitos o no autorizados.</li>
-    <li>No intentar acceder sin autorización a sistemas, bases de datos o áreas restringidas del Sitio.</li>
-    <li>No transmitir virus, malware o código dañino.</li>
-    <li>No suplantar la identidad de otra persona o entidad.</li>
-    <li>No recopilar información personal de otros usuarios sin su consentimiento.</li>
+    <li data-i18n="terms.s6.l1">Copiar, reproducir, distribuir o modificar el contenido del Sitio sin autorización previa por escrito.</li>
+    <li data-i18n="terms.s6.l2">Usar el contenido para fines comerciales no autorizados.</li>
+    <li data-i18n="terms.s6.l3">Utilizar marcas, logotipos o nombre comercial de ACCIO FREIGHT sin autorización.</li>
   </ul>
 
-  <h2 id="tc-10">10. Fuerza mayor</h2>
-  <p>ACCIO FREIGHT no será responsable por el incumplimiento de sus obligaciones cuando éste se deba a causas de fuerza mayor, incluyendo pero no limitándose a: desastres naturales, pandemias, guerras, disturbios civiles, huelgas, decisiones gubernamentales, cortes de servicios de telecomunicaciones, interrupciones en el suministro eléctrico o cualquier otra circunstancia ajena a su control razonable.</p>
+  <h2 id="tc-7" data-i18n="terms.s7.title">7. Responsabilidad</h2>
+  <p data-i18n-html="terms.s7.p1"><strong>ACCIO FREIGHT</strong> se compromete a prestar los servicios con la debida diligencia y profesionalismo. Sin embargo:</p>
+  <ul>
+    <li data-i18n-html="terms.s7.l1">No se responsabiliza por <strong>demoras, cancelaciones o incidencias</strong> causadas por navieras, autoridades portuarias, aduaneras o fuerza mayor.</li>
+    <li data-i18n="terms.s7.l2">No garantiza la disponibilidad ininterrumpida del Sitio ni se responsabiliza por errores u omisiones en su contenido.</li>
+    <li data-i18n="terms.s7.l3">La información publicada en el Sitio es de carácter general y no constituye asesoría legal, aduanera o de seguros.</li>
+    <li data-i18n="terms.s7.l4">El uso de la información del Sitio es responsabilidad exclusiva del usuario.</li>
+  </ul>
+  <p data-i18n="terms.s7.p2">En ningún caso ACCIO FREIGHT será responsable por daños indirectos, pérdida de beneficios, pérdida de datos o cualquier daño consecuente derivado del uso del Sitio o de los servicios contratados.</p>
 
-  <h2 id="tc-11">11. Confidencialidad</h2>
-  <p>ACCIO FREIGHT se compromete a mantener la confidencialidad de la información que le sea proporcionada por el cliente en el marco de la prestación de servicios, incluyendo datos comerciales, operativos y contractuales. Esta obligación se mantendrá vigente incluso después de la terminación de la relación comercial.</p>
+  <h2 id="tc-8" data-i18n="terms.s8.title">8. Enlaces a sitios de terceros</h2>
+  <p data-i18n="terms.s8.p1">El Sitio puede contener enlaces a sitios web de terceros (ej: Google Maps, WhatsApp, redes sociales de navieras). Estos enlaces se proporcionan solo como referencia. ACCIO FREIGHT no controla ni se responsabiliza por el contenido, políticas de privacidad o prácticas de dichos sitios de terceros.</p>
 
-  <h2 id="tc-12">12. Modificaciones</h2>
-  <p>ACCIO FREIGHT se reserva el derecho de modificar estos Términos y Condiciones en cualquier momento. Las modificaciones entrarán en vigor desde su publicación en el Sitio. Se recomienda revisar periódicamente esta página.</p>
+  <h2 id="tc-9" data-i18n="terms.s9.title">9. Uso aceptable</h2>
+  <p data-i18n="terms.s9.p1">Al utilizar el Sitio, usted se compromete a:</p>
+  <ul>
+    <li data-i18n="terms.s9.l1">No utilizar el Sitio para fines ilícitos o no autorizados.</li>
+    <li data-i18n="terms.s9.l2">No intentar acceder sin autorización a sistemas, bases de datos o áreas restringidas del Sitio.</li>
+    <li data-i18n="terms.s9.l3">No transmitir virus, malware o código dañino.</li>
+    <li data-i18n="terms.s9.l4">No suplantar la identidad de otra persona o entidad.</li>
+    <li data-i18n="terms.s9.l5">No recopilar información personal de otros usuarios sin su consentimiento.</li>
+  </ul>
 
-  <h2 id="tc-13">13. Ley aplicable y jurisdicción</h2>
-  <p>Estos Términos y Condiciones se rigen por las leyes de la <strong>República del Perú</strong>. Para la resolución de cualquier controversia derivada de estos Términos o del uso del Sitio, las partes se someten a la jurisdicción de los tribunales competentes de <strong>Lima o Callao, Perú</strong>, renunciando expresamente a cualquier otro fuero que pudiera corresponderles.</p>
+  <h2 id="tc-10" data-i18n="terms.s10.title">10. Fuerza mayor</h2>
+  <p data-i18n="terms.s10.p1">ACCIO FREIGHT no será responsable por el incumplimiento de sus obligaciones cuando éste se deba a causas de fuerza mayor, incluyendo pero no limitándose a: desastres naturales, pandemias, guerras, disturbios civiles, huelgas, decisiones gubernamentales, cortes de servicios de telecomunicaciones, interrupciones en el suministro eléctrico o cualquier otra circunstancia ajena a su control razonable.</p>
 
-  <h2 id="tc-14">14. Contacto</h2>
-  <p>Para consultas sobre estos Términos y Condiciones:</p>
+  <h2 id="tc-11" data-i18n="terms.s11.title">11. Confidencialidad</h2>
+  <p data-i18n="terms.s11.p1">ACCIO FREIGHT se compromete a mantener la confidencialidad de la información que le sea proporcionada por el cliente en el marco de la prestación de servicios, incluyendo datos comerciales, operativos y contractuales. Esta obligación se mantendrá vigente incluso después de la terminación de la relación comercial.</p>
+
+  <h2 id="tc-12" data-i18n="terms.s12.title">12. Modificaciones</h2>
+  <p data-i18n="terms.s12.p1">ACCIO FREIGHT se reserva el derecho de modificar estos Términos y Condiciones en cualquier momento. Las modificaciones entrarán en vigor desde su publicación en el Sitio. Se recomienda revisar periódicamente esta página.</p>
+
+  <h2 id="tc-13" data-i18n="terms.s13.title">13. Ley aplicable y jurisdicción</h2>
+  <p data-i18n-html="terms.s13.p1">Estos Términos y Condiciones se rigen por las leyes de la <strong>República del Perú</strong>. Para la resolución de cualquier controversia derivada de estos Términos o del uso del Sitio, las partes se someten a la jurisdicción de los tribunales competentes de <strong>Lima o Callao, Perú</strong>, renunciando expresamente a cualquier otro fuero que pudiera corresponderles.</p>
+
+  <h2 id="tc-14" data-i18n="terms.s14.title">14. Contacto</h2>
+  <p data-i18n="terms.s14.p1">Para consultas sobre estos Términos y Condiciones:</p>
   <div class="highlight">
-    <strong>Correo electrónico:</strong> pirrazabal@acciofreight.com<br>
-    <strong>WhatsApp:</strong> +51 922 458 136<br>
-    <strong>Horario:</strong> Lunes a Viernes, 8:30 am — 6:00 pm (hora de Perú)
+    <strong data-i18n="terms.s14.lEmail">Correo electrónico:</strong> pirrazabal@acciofreight.com<br>
+    <strong data-i18n="terms.s14.lWhatsapp">WhatsApp:</strong> +51 922 458 136<br>
+    <strong data-i18n="terms.s14.lHours">Horario:</strong> <span data-i18n="terms.s14.vHours">Lunes a Viernes, 8:30 am — 6:00 pm (hora de Perú)</span>
   </div>
 
 </div>
@@ -706,11 +369,11 @@
   <div class="container footer-main">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="index.html" class="brand footer-brand-link" aria-label="ACCIO FREIGHT — Inicio">
+        <a href="index.html" class="brand footer-brand-link" aria-label="ACCIO FREIGHT — Inicio" data-i18n-attr="aria-label:nav.brandAria">
           <img src="logo.png" alt="Accio Freight" class="brand-mark">
           <span class="brand-name">Accio Freight</span>
         </a>
-        <p>Soluciones logísticas integrales con trazabilidad en tiempo real y atención personalizada.</p>
+        <p data-i18n="footer.tagline">Soluciones logísticas integrales con trazabilidad en tiempo real y atención personalizada.</p>
         <div class="footer-social">
           <a href="https://wa.me/51957518881" target="_blank" rel="noopener" aria-label="WhatsApp">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -721,170 +384,38 @@
         </div>
       </div>
       <div class="footer-col">
-        <h4>Servicios</h4>
-        <a href="index.html#servicios">Transporte marítimo</a>
-        <a href="index.html#servicios">Transporte aéreo</a>
-        <a href="index.html#servicios">Transporte terrestre</a>
-        <a href="index.html#contacto">Seguro de carga</a>
+        <h4 data-i18n="footer.colServices">Servicios</h4>
+        <a href="index.html#servicios" data-i18n="footer.svcSea">Transporte marítimo</a>
+        <a href="index.html#servicios" data-i18n="footer.svcAir">Transporte aéreo</a>
+        <a href="index.html#servicios" data-i18n="footer.svcLand">Transporte terrestre</a>
+        <a href="index.html#contacto" data-i18n="footer.svcInsurance">Seguro de carga</a>
       </div>
       <div class="footer-col">
-        <h4>Quiénes somos</h4>
-        <a href="index.html#nosotros">Nosotros</a>
-        <a href="index.html#servicios">Servicios</a>
+        <h4 data-i18n="footer.colAbout">Quiénes somos</h4>
+        <a href="index.html#nosotros" data-i18n="nav.about">Nosotros</a>
+        <a href="index.html#servicios" data-i18n="nav.services">Servicios</a>
       </div>
       <div class="footer-col">
-        <h4>Contacto</h4>
+        <h4 data-i18n="nav.contact">Contacto</h4>
         <a href="https://wa.me/51957518881" target="_blank" rel="noopener">Gian: +51 957 518 881</a>
         <a href="https://wa.me/51922458136" target="_blank" rel="noopener">Patricia: +51 922 458 136</a>
-        <a href="index.html#contacto">Lima, Perú</a>
-        <a href="index.html#contacto">Cotizar carga</a>
+        <a href="index.html#contacto" data-i18n="footer.location">Lima, Perú</a>
+        <a href="index.html#contacto" data-i18n="nav.cta">Cotizar carga</a>
       </div>
     </div>
   </div>
   <div class="container footer-bottom">
-    <p>© 2026 ACCIO FREIGHT SAC. Todos los derechos reservados.</p>
+    <p data-i18n="footer.copyright">© 2026 ACCIO FREIGHT SAC. Todos los derechos reservados.</p>
     <div class="footer-bottom-links">
-      <a href="legal.html#privacidad">Política de privacidad</a>
-      <a href="legal.html#terminos">Términos y condiciones</a>
+      <a href="legal.html#privacidad" data-i18n="footer.linkPrivacy">Política de privacidad</a>
+      <a href="legal.html#terminos" data-i18n="footer.linkTerms">Términos y condiciones</a>
     </div>
   </div>
 </footer>
 
-<script>
-  /* =========================================================
-     1. TABS — Privacidad / Términos
-  ========================================================= */
-  const getScrollBehavior = () => window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
-
-  function showTab(tabId) {
-    document.querySelectorAll('.tab').forEach(t => {
-      const isActive = t.dataset.tab === tabId;
-      t.classList.toggle('active', isActive);
-      t.setAttribute('aria-selected', String(isActive));
-      t.tabIndex = isActive ? 0 : -1;
-    });
-    document.querySelectorAll('.legal-section').forEach(s => {
-      const isActive = s.id === tabId;
-      s.classList.toggle('active', isActive);
-      s.hidden = !isActive;
-    });
-    document.getElementById('page-title').innerHTML = tabId === 'privacidad'
-      ? 'Privacidad y <em>Términos</em>'
-      : 'Términos y <em>Privacidad</em>';
-    window.scrollTo({ top: 0, behavior: getScrollBehavior() });
-  }
-
-  const tabButtons = Array.from(document.querySelectorAll('.tab'));
-  tabButtons.forEach((tab, index) => tab.addEventListener('keydown', e => {
-    let nextIndex = null;
-    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') nextIndex = (index + 1) % tabButtons.length;
-    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') nextIndex = (index - 1 + tabButtons.length) % tabButtons.length;
-    if (e.key === 'Home') nextIndex = 0;
-    if (e.key === 'End') nextIndex = tabButtons.length - 1;
-    if (nextIndex === null) return;
-    e.preventDefault();
-    tabButtons[nextIndex].focus();
-    showTab(tabButtons[nextIndex].dataset.tab);
-  }));
-
-  // Deep link: si la URL tiene #privacidad o #terminos, abrir ese tab
-  if (location.hash === '#terminos') {
-    showTab('terminos');
-  } else if (location.hash === '#privacidad') {
-    showTab('privacidad');
-  }
-
-  // Smooth scroll para enlaces internos del TOC
-  document.querySelectorAll('.toc a').forEach(a => {
-    a.addEventListener('click', e => {
-      const target = document.querySelector(a.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: getScrollBehavior(), block: 'start' });
-      }
-    });
-  });
-
-  /* =========================================================
-     2. NAV MOBILE — toggle del menú hamburguesa
-  ========================================================= */
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
-  const navOverlay = document.getElementById('navOverlay');
-
-  function setNavAccessibility(isOpen) {
-    const isMobile = window.innerWidth <= 880;
-    const isHidden = isMobile && !isOpen;
-    navLinks.setAttribute('aria-hidden', String(isHidden));
-    if (isHidden) navLinks.setAttribute('inert', '');
-    else navLinks.removeAttribute('inert');
-    document.body.classList.toggle('nav-open', isMobile && isOpen);
-  }
-
-  function closeNav() {
-    navToggle.classList.remove('open');
-    navLinks.classList.remove('open');
-    navOverlay.classList.remove('show');
-    navToggle.setAttribute('aria-expanded', 'false');
-    navToggle.setAttribute('aria-label', 'Abrir menú');
-    setNavAccessibility(false);
-    navToggle.focus();
-  }
-  function openNav() {
-    navToggle.classList.add('open');
-    navLinks.classList.add('open');
-    navOverlay.classList.add('show');
-    navToggle.setAttribute('aria-expanded', 'true');
-    navToggle.setAttribute('aria-label', 'Cerrar menú');
-    setNavAccessibility(true);
-    const firstLink = navLinks.querySelector('a');
-    if (firstLink) requestAnimationFrame(() => firstLink.focus());
-  }
-  navToggle.addEventListener('click', () => {
-    if (navLinks.classList.contains('open')) {
-      closeNav();
-    } else {
-      openNav();
-    }
-  });
-  navOverlay.addEventListener('click', closeNav);
-  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
-  setNavAccessibility(false);
-  window.addEventListener('resize', () => setNavAccessibility(navLinks.classList.contains('open')));
-
-  /* =========================================================
-     3. REVEAL ON SCROLL
-  ========================================================= */
-  if ('IntersectionObserver' in window) {
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-    document.querySelectorAll('.reveal-up').forEach(el => revealObserver.observe(el));
-  } else {
-    document.querySelectorAll('.reveal-up').forEach(el => el.classList.add('visible'));
-  }
-
-  /* =========================================================
-     4. BACK TO TOP
-  ========================================================= */
-  const backToTop = document.getElementById('backToTop');
-  function updateBackToTop() {
-    if (window.scrollY > 400) {
-      backToTop.classList.add('show');
-    } else {
-      backToTop.classList.remove('show');
-    }
-  }
-  window.addEventListener('scroll', updateBackToTop, { passive: true });
-  backToTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: getScrollBehavior() });
-  });
-</script>
+<script src="js/i18n-data-legal.js" defer></script>
+<script src="js/site.js" defer></script>
+<script src="js/legal.js" defer></script>
 
 </body>
 </html>
