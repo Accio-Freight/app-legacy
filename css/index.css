@@ -440,6 +440,7 @@
     line-height:1.22;
     color:rgba(255,255,255,.96);
     text-shadow:0 1px 10px rgba(0,0,0,.35);
+    text-align:justify;
   }
   .hero-btn{margin-top:18px;background:#fff;color:#101425;font-size:12px;padding:9px 21px;}
   .hero-btn:hover{background:#eef1f4;}
@@ -1404,11 +1405,11 @@
   }
 
   .hero-content p{
-    width:710px !important;
-    max-width:710px !important;
+    width:730px !important;
+    max-width:730px !important;
     margin:38px 0 0 !important;
     font-family:'Barlow',system-ui,sans-serif !important;
-    font-size:32px !important;
+    font-size:31px !important;
     line-height:1.45 !important;
     font-weight:400 !important;
     letter-spacing:0 !important;
