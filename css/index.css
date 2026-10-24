@@ -525,7 +525,7 @@
     .hero{height:auto;min-height:680px;background-position:64% center;}
     .hero-content{padding:0 28px;}
     .hero h1{font-size:clamp(46px,9vw,80px);max-width:520px;}
-    .hero-content p{font-size:15px;max-width:520px;}
+    .hero-content p{font-size:clamp(14.9px,2.91vw,25.8px);max-width:520px;}
     .process-grid>div:first-child,.process-grid>.steps{order:initial;}
     .process-grid{grid-template-columns:1fr;gap:34px;}
     .contact-inner{grid-template-columns:1fr;gap:28px;}
@@ -1463,7 +1463,7 @@
   }
 
   .hero-content p{
-    font-size:22px !important;
+    font-size:26px !important;
     width:610px !important;
   }
 }
@@ -1690,6 +1690,9 @@
     font-size:clamp(38px,11.5vw,48px) !important;
     line-height:1.02 !important;
     letter-spacing:-.6px !important;
+  }
+  .hero-content p{
+    font-size:clamp(12.3px,3.71vw,15.5px) !important;
   }
 }
 
