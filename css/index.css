@@ -1813,7 +1813,8 @@ header.scrolled .logo-text strong {
 
 header.scrolled .logo-text small {
   font-size: 9px !important;
-  color: #1e58e8 !important;
+  /*color: #1e58e8 !important;*/
+  color: #ffffff !important;
 }
 
 .nav-menu {
