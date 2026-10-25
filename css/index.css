@@ -773,7 +773,7 @@
     font-weight:400 !important;
     letter-spacing:0 !important;
     margin-top:8px !important;
-    max-width:none !important;
+    max-width:750px !important;
   }
 
   @media (max-width:900px){
@@ -836,7 +836,7 @@
     font-weight:400 !important;
     letter-spacing:0 !important;
     margin-top:8px !important;
-    max-width:none !important;
+    max-width:505px !important;
   }
 
   @media (max-width:900px){
@@ -961,7 +961,7 @@
   font-weight:400 !important;
   letter-spacing:-2.2px !important;
   margin:0 !important;
-  max-width:850px !important;
+  max-width:750px !important;
   color:var(--ink) !important;
 }
 .process .process-copy h2 em{

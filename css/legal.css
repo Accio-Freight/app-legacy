@@ -97,6 +97,12 @@
     font-family:'Barlow',sans-serif; font-size:1.2rem; font-weight:700;
     white-space:nowrap;
   }
+  .logo{display:flex; align-items:center; gap:10px; color:#fff; font-weight:700;}
+  .logo:hover{color:var(--ice);}
+  .logo-mark{height:34px; width:auto; flex-shrink:0; display:block; filter:brightness(0) invert(1);}
+  .logo-text{display:flex; flex-direction:column; line-height:0.95;}
+  .logo-text strong{font-family:'Barlow',sans-serif; font-size:1.2rem; font-weight:700; white-space:nowrap;}
+  .logo-text small{font-family:'Barlow',sans-serif; font-size:0.65rem; font-weight:600; letter-spacing:1.5px; white-space:nowrap; opacity:.85;}
   .nav-links{display:flex; gap:36px; list-style:none; align-items:center;}
   .nav-links > li{position:relative;}
   .nav-links > li > a{
@@ -130,6 +136,7 @@
     -webkit-tap-highlight-color:transparent;
   }
   .nav-overlay.show{opacity:1; visibility:visible;}
+  .nav-actions{display:flex; align-items:center; gap:16px;}
 
   @media(max-width:880px){
     .nav-links{
@@ -145,7 +152,6 @@
     .nav-actions{display:none;}
     .nav-toggle{display:block;}
   }
-  .nav-actions{display:flex; align-items:center; gap:16px;}
 
   /* ===== HERO LEGAL ===== */
   .legal-hero{
