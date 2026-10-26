@@ -34,32 +34,39 @@ window.I18N = {
       title: "Movemos lo que<em>tu empresa necesita.</em>",
       lead: "Elegimos la combinación correcta de transporte según tiempos, costo, tipo de carga y destino.",
       card1: {
-        tagPill: "FCL · LCL · IMPORT · EXPORT",
-        tag: "01 / OCEAN",
+        tagPill: "FCL · LCL · IMPORTACIÓN · EXPORTACIÓN",
+        tag: "01 / MARÍTIMO",
         title: "Transporte marítimo",
         text: "Importación y exportación FCL y LCL con cobertura global, coordinación integral y seguimiento durante todo el trayecto.",
         link: "COTIZAR MARÍTIMO →"
       },
       card2: {
-        tagPill: "FAST · GLOBAL · PRIORITY",
-        tag: "02 / AIR",
+        tagPill: "RÁPIDO · GLOBAL · PRIORITARIO",
+        tag: "02 / AÉREO",
         title: "Transporte aéreo",
         text: "Soluciones rápidas y seguras para cargas urgentes, con conexiones internacionales y monitoreo continuo.",
         link: "COTIZAR AÉREO →"
       },
       card3: {
-        tagPill: "NATIONAL · REGIONAL · DOOR TO DOOR",
-        tag: "03 / GROUND",
+        tagPill: "NACIONAL · REGIONAL · PUERTA A PUERTA",
+        tag: "03 / TERRESTRE",
         title: "Transporte terrestre",
         text: "Distribución nacional e internacional con operaciones flexibles, confiables y coordinadas con el resto de tu cadena logística.",
         link: "COTIZAR TERRESTRE →"
       },
       card4: {
-        tagPill: "IMPORT · EXPORT · DESPACHO ADUANERO",
+        tagPill: "IMPORTACIÓN · EXPORTACIÓN · DESPACHO ADUANERO",
         tag: "04 / ADUANA",
         title: "Agenciamiento aduanero",
         text: "Clasificación arancelaria, trámites y despacho ante Aduanas, con cumplimiento normativo para que tu carga cruce la frontera sin demoras.",
         link: "COTIZAR ADUANA →"
+      },
+      card5: {
+        tagPill: "CARGA · TRÁNSITO · TODO RIESGO",
+        tag: "05 / SEGURO",
+        title: "Seguro de carga",
+        text: "Protección integral para tu carga durante todo el trayecto, con cobertura ante daños, pérdida o robo y gestión ágil de siniestros.",
+        link: "COTIZAR SEGURO →"
       }
     },
     about: {
@@ -183,6 +190,13 @@ window.I18N = {
         title: "Customs brokerage",
         text: "Tariff classification, paperwork and customs clearance, with full regulatory compliance so your cargo crosses the border without delays.",
         link: "GET A CUSTOMS QUOTE →"
+      },
+      card5: {
+        tagPill: "CARGO · TRANSIT · ALL RISK",
+        tag: "05 / INSURANCE",
+        title: "Cargo insurance",
+        text: "Comprehensive coverage for your cargo throughout the journey, protecting against damage, loss or theft with fast claims handling.",
+        link: "GET AN INSURANCE QUOTE →"
       }
     },
     about: {
